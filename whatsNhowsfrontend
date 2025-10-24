@@ -1,0 +1,95 @@
+:|:FRONTEND:|:
+
+1.AUTHENTICATE
+
+>Sign in;sign up;Password Reset(Dummy as for now)
+
+2.DASHBOARD(main layout)
+
+>Components:
+*Navigation_bar(search,profile dropdown,notifications)
+*Sidebar_menu(can be collapsed)
+
+>Widgets:
+*Header(some message )
+*metrics(total employees,new joinees,heads,..)
+**project overview(progress bars)
+**Employees on leave
+*todays events
+
+>Filters:
+*department
+*date range(can be custom/months/years)
+
+
+
+3.EMPLOYEE MANAGEMENT SECTION
+
+a.Manage Employees
+>Tab Navigation
+>Seacrh Bar(can add some keywords)
+>FIlter Button
+>Add Employee Button
+
+b.Employee Table Coloumns
+>Employee Name (with avatar + email)
+>Phone Number
+>Department (with color-coded badges)
+>Job Title
+>Contract Type (Onsite/Fulltime/Part-time)
+>Attendance (hours tracked)
+>Actions (See Details button + more options menu)
+
+c.Employee Detail/Profile Page
+>Profile header (photo, name, department)
+>Contact Information
+>Role and Assignment details
+>Payroll & Wage information
+>Description/Bio
+>Performance history
+>Documents attached
+
+
+
+4.RECRUITMENT SECTION
+
+>CARD:
+*posting
+*status
+*applicants count
+*quick actions
+*More details button
+
+
+5.PAYROLL SECTION***
+
+6.SCHEDULE/CALENDER SECTION
+
+> Employee Schedule view
+*Individual employee calendar
+*Shift details (planned vs actual time)
+*Check-in/Check-out times
+*Overtime calculation
+*Break tracking
+
+
+
+7.REPORTS SECTION**(Weekly Reports Page:
+Tabs)
+
+8.STAFF SECTION**
+
+9.MESSENGER/COMMUNICATION
+>Announcement
+>groupchat
+
+10.SETTINGS**
+
+11.HELP CENTRE /SUPPORT*
+
+>FAQs
+>Documentation
+>Contact support
+
+
+
