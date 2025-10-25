@@ -1,5 +1,5 @@
 // EmployeeDto.java
-package main.java.PROJECTS.model.dto;
+package project1.dto;
 
 import lombok.*;
 

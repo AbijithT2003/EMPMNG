@@ -1,7 +1,7 @@
-package main.java.PROJECTS.repository;
+package project1.repository;
 
-import com.yourorg.yourapp.model.employee.Employee;
-import com.yourorg.yourapp.model.employee.enums.EmploymentStatus;
+import project1.model.Employee;
+import project1.model.enums.EmploymentStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,12 +1,7 @@
-package main.java.PROJECTS.controller;
-import main.java.PROJECTS.model.*;
-import main.java.PROJECTS.service.EmployeeService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
+package project1.controller;
+import project1.model.*;
+import project1.dto.*;
+import project1.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -24,7 +19,7 @@ import java.util.List;
 @Tag(name = "Employee Management System", description = "APIs for managing employees")
 @CrossOrigin(origins = "*", allowedHeaders = "*",allowcredentials = "true")
 
-public class emplycontroller {
+public class EmployeeController {
 
     private final EmployeeService EmployeeService;
     @RequestMapping("/")

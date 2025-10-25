@@ -1,4 +1,4 @@
-package main.java.PROJECTS.exception;
+package project1.exception;
 
 @RestControllerAdvice
 public class globalexceptionhandler {

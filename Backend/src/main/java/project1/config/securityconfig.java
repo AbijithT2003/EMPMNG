@@ -1,4 +1,4 @@
-package main.java.project1.config;
+package project1.config;
 
 
 public class securityconfig {

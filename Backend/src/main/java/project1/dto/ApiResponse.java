@@ -1,4 +1,4 @@
-package main.java.PROJECTS.dto;
+package project1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

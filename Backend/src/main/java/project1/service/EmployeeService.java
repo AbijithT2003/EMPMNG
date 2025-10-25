@@ -1,10 +1,12 @@
-package main.java.PROJECTS.service;
+package project1.service;
 
-import com.yourorg.yourapp.model.employee.Employee;
-import com.yourorg.yourapp.repository.EmployeeRepository;
+import project1.model.Employee;
+import project1.repository.EmployeeRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import project1.model.enums.EmploymentStatus;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,9 +36,17 @@ public class EmployeeService {
     }
 
     public Employee updateEmployee(Long id, Employee updated) {
-        Employee existing = getEmployeeById(id);
-        updated.setId(existing.getId());
-        return employeeRepository.save(updated);
+        log.info("Updating employee with ID: {}", id);
+        return employeeRepository.findById(id)
+                .map(existing -> {
+                    existing.setFirstName(updated.getFirstName());
+                    existing.setLastName(updated.getLastName());
+                    existing.setEmail(updated.getEmail());
+                    existing.setStatus(updated.getStatus());
+                    existing.setDepartment(updated.getDepartment());
+                    return employeeRepository.save(existing);
+                })
+                .orElseThrow(() -> new RuntimeException("Employee not found"));
     }
 
     public void deleteEmployee(Long id) {
@@ -45,4 +55,9 @@ public class EmployeeService {
         }
         employeeRepository.deleteById(id);
     }
+    public List<Employee> getEmployeesByStatus(EmploymentStatus status) {
+        log.info("Fetching employees by status: {}", status);
+        return employeeRepository.findByStatus(status);
+    }
+    
 }
