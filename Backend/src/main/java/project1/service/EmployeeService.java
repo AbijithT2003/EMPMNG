@@ -47,6 +47,7 @@ public class EmployeeService {
                 .lastName(createDto.getLastName())
                 .email(createDto.getEmail())
                 .jobTitle(createDto.getJobTitle())
+                .salary(createDto.getSalary())  // Fixed: Added salary mapping
                 .joinDate(LocalDate.now())
                 .status(EmploymentStatus.ACTIVE)
                 .build();
@@ -64,6 +65,7 @@ public class EmployeeService {
         existing.setLastName(updatedDto.getLastName());
         existing.setEmail(updatedDto.getEmail());
         existing.setJobTitle(updatedDto.getJobTitle());
+        existing.setSalary(updatedDto.getSalary());  // Fixed: Added salary update
         
         Employee updated = employeeRepository.save(existing);
         return convertToDto(updated);
@@ -90,6 +92,7 @@ public class EmployeeService {
                 .lastName(employee.getLastName())
                 .email(employee.getEmail())
                 .jobTitle(employee.getJobTitle())
+                .salary(employee.getSalary())  // Fixed: Added salary to DTO conversion
                 .build();
     }
     

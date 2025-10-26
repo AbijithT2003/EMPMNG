@@ -1,0 +1,29 @@
+.schedule h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.time {
+  color: #4a4ae4;
+}
+
+.name {
+  color: #555;
+}

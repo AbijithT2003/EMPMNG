@@ -35,7 +35,7 @@ public class Department extends BaseEntity {
     private Employee manager;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.PERSIST)
-    @JsonIgnore
+    @JsonIgnore  // To prevent circular references during serialization 
     @Builder.Default
     private List<Employee> employees = new ArrayList<>();
 

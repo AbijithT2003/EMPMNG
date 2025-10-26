@@ -42,6 +42,7 @@ public class Employee extends BaseEntity {
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "employee_roles", joinColumns = @JoinColumn(name = "employee_id"))
+    @Builder.Default
     private Set<Role> roles = new HashSet<>();
 
     @NotNull(message = "Join date is required")
@@ -62,6 +63,9 @@ public class Employee extends BaseEntity {
     @Size(max = 100)
     @Column(nullable = false, length = 100)
     private String jobTitle;
+
+    @Column(name = "salary")
+    private Double salary;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
