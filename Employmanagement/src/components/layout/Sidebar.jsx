@@ -7,9 +7,9 @@ function Sidebar({ activeView, setActiveView, sidebarOpen, setSidebarOpen }) {
       <div className="sidebar-header">
         <div className="sidebar-title">
           <div className="logo">
-            <Users size={18} color="#fff" />
+            <Users color="#fff" />
           </div>
-          <h1>EmpManage</h1>
+          <h1></h1>
         </div>
         <button onClick={() => setSidebarOpen(false)} className="close-btn">
           <X size={18} />

@@ -1,18 +1,25 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.2s;
   border: none;
+  white-space: nowrap;
 }
 
 .btn:active {
   transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Primary Button (Blue) */
@@ -21,7 +28,7 @@
   color: white;
 }
 
-.btn.primary:hover {
+.btn.primary:hover:not(:disabled) {
   background: #1d4ed8;
 }
 
@@ -29,9 +36,10 @@
 .btn.secondary {
   background: #f3f4f6;
   color: #111827;
+  border: 1px solid #e5e7eb;
 }
 
-.btn.secondary:hover {
+.btn.secondary:hover:not(:disabled) {
   background: #e5e7eb;
 }
 
@@ -42,7 +50,7 @@
   border: 1px solid #2563eb;
 }
 
-.btn.outline:hover {
+.btn.outline:hover:not(:disabled) {
   background: #eff6ff;
 }
 
@@ -52,12 +60,6 @@
   color: white;
 }
 
-.btn.danger:hover {
+.btn.danger:hover:not(:disabled) {
   background: #dc2626;
-}
-
-/* Disabled state */
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }

@@ -1,19 +1,16 @@
+
 .sidebar {
   width: 16rem;
   background: white;
   border-right: 1px solid #e5e7eb;
-  position: fixed;
-  inset-y: 0;
+  position: static;
   left: 0;
   z-index: 50;
-  transform: translateX(-100%);
+
+  transform: translateX(0);
+  visibility: visible;
   transition: transform 0.3s ease-in-out;
 }
-
-.sidebar.open {
-  transform: translateX(0);
-}
-
 .sidebar-header {
   height: 4rem;
   border-bottom: 1px solid #e5e7eb;
@@ -37,6 +34,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.app-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
 }
 
 .sidebar-nav {
@@ -74,13 +77,36 @@
 }
 
 .close-btn {
-  background: none;
+  background:#03c1f0;
   border: none;
   padding: 0.25rem;
   border-radius: 0.25rem;
   cursor: pointer;
+  display: none; /* hidden on desktop by default */
 }
 
 .close-btn:hover {
-  background: #f3f4f6;
+  background: #0c0000;
+}
+
+/* =============================
+   Mobile View (collapsible)
+   ============================= */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .close-btn {
+    display: block;
+  }
 }

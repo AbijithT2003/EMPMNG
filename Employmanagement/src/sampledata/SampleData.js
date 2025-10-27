@@ -58,8 +58,31 @@ export const initialEmployees = [
 ];
 
 export const departments = [
-  { id: 1, name: "Design", count: 2, color: "green" },
-  { id: 2, name: "Development", count: 1, color: "blue" },
-  { id: 3, name: "HR", count: 1, color: "purple" },
-  { id: 4, name: "PM", count: 1, color: "orange" },
+  {
+    id: 1,
+    name: "Design",
+    head: "Brooklyn Simmons",
+    employees: 2,
+    budget: 150000,
+    color: "green",
+  },
+  {
+    id: 2,
+    name: "Development",
+    head: "Cody Fisher",
+    employees: 1,
+    budget: 200000,
+    color: "blue",
+  },
+  {
+    id: 3,
+    name: "HR",
+    head: "Bessie Cooper",
+    employees: 1,
+    budget: 100000,
+    color: "purple",
+  },
+  { id: 4, name: "PM", head: "Leslie Alexander",
+    employees: 1,
+    budget: 120000, color: "orange" },
 ];

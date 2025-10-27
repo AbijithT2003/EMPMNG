@@ -1,12 +1,15 @@
+import { useState } from "react";
 import {
   Search,
   Filter,
   Users,
   Calendar,
-  Download,
   Plus,
-  MoreVertical,
+  Edit,
+  Trash2,
+  Building2,
 } from "lucide-react";
+import EmployeeForm from "./EmployeeForm";
 import "./EmployeeView.css";
 
 function EmployeeView({
@@ -15,42 +18,73 @@ function EmployeeView({
   setSearchQuery,
   activeTab,
   setActiveTab,
+  onCreateEmployee,
+  onUpdateEmployee,
+  onDeleteEmployee,
 }) {
+  const [showForm, setShowForm] = useState(false);
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const [showActions, setShowActions] = useState(false);
+
+  const toggleActions = () => setShowActions((prev) => !prev);
+
   const filteredEmployees = employees.filter(
     (emp) =>
-      emp.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      emp.email.toLowerCase().includes(searchQuery.toLowerCase())
+      emp.firstName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      emp.lastName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      emp.jobTitle?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      emp.department?.name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const getDepartmentColor = (dept) => {
-    const colors = {
-      Design: "green",
-      Development: "blue",
-      HR: "purple",
-      PM: "orange",
-    };
-    return colors[dept] || "gray";
+  const handleAdd = () => {
+    setSelectedEmployee(null);
+    setShowForm(true);
+  };
+
+  const handleEdit = (employee) => {
+    setSelectedEmployee(employee);
+    setShowForm(true);
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this employee?")) {
+      try {
+        await onDeleteEmployee(id);
+      } catch (error) {
+        alert("Failed to delete employee: " + error.message);
+      }
+    }
+  };
+
+  const handleFormSubmit = async (formData) => {
+    if (selectedEmployee) {
+      await onUpdateEmployee(selectedEmployee.id, formData);
+    } else {
+      await onCreateEmployee(formData);
+    }
+    setShowForm(false);
   };
 
   return (
     <div className="employee-view">
+      {/* Header */}
       <div className="employee-header">
         <div>
-          <h3>Employee</h3>
-          <p>Manage your employee</p>
+          <h3>Employees</h3>
+          <p>Manage your employee records efficiently</p>
         </div>
         <div className="employee-actions">
-          <button className="export-btn">
-            <Download size={14} />
-            Export
+          <button className="filter-btn" onClick={toggleActions}>
+            {showActions ? "Hide Actions" : "Show Actions"}
           </button>
-          <button className="add-btn">
+          <button className="add-btn" onClick={handleAdd}>
             <Plus size={14} />
             Add Employee
           </button>
         </div>
       </div>
 
+      {/* Tabs */}
       <div className="tabs">
         <button
           className={`tab-btn ${activeTab === "employees" ? "active" : ""}`}
@@ -68,12 +102,13 @@ function EmployeeView({
         </button>
       </div>
 
+      {/* Search and Filter */}
       <div className="search-filter">
         <div className="search-field">
           <Search className="search-icon" size={14} color="#9ca3af" />
           <input
             type="text"
-            placeholder="Search keyword..."
+            placeholder="Search employees by name,job, department..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -84,50 +119,85 @@ function EmployeeView({
         </button>
       </div>
 
+      {/* Employee Table */}
       <div className="employee-table">
         <table>
           <thead>
             <tr>
               <th>Employee Name</th>
-              <th className="hide-md">Phone Number</th>
+              <th className="hide-md">Email</th>
+              <th>Job Title</th>
               <th>Department</th>
-              <th className="hide-lg">Job Title</th>
-              <th className="hide-xl">Contract Type</th>
-              <th className="hide-xl">Attendance</th>
-              <th>Actions</th>
+              <th>Contract</th>
+              <th>Status</th>
+              <th className="hide-lg">Salary</th>
+              {showActions && <th>Actions</th>}
             </tr>
           </thead>
+
           <tbody>
             {filteredEmployees.map((emp) => (
               <tr key={emp.id}>
                 <td>
                   <div className="emp-info">
-                    <div className="avatar">{emp.avatar}</div>
+                    <div className="avatar">
+                      {emp.firstName?.charAt(0)}
+                      {emp.lastName?.charAt(0)}
+                    </div>
                     <div>
-                      <div className="emp-name">{emp.name}</div>
-                      <div className="emp-email">{emp.email}</div>
+                      <div className="emp-name">
+                        {emp.firstName} {emp.lastName}
+                      </div>
+                      <div className="emp-id">{emp.employeeNumber}</div>
                     </div>
                   </div>
                 </td>
-                <td className="hide-md">{emp.phone}</td>
+                <td className="hide-md">{emp.email}</td>
+                <td>{emp.jobTitle}</td>
+                <td>
+                  <div className="dept-cell">
+                    <Building2 size={12} />
+                    {emp.department?.name || "-"}
+                  </div>
+                </td>
+                <td>{emp.contractType || "-"}</td>
                 <td>
                   <span
-                    className={`dept-badge ${getDepartmentColor(
-                      emp.department
-                    )}`}
+                    className={`status-badge ${
+                      emp.status === "ACTIVE"
+                        ? "active"
+                        : emp.status === "ON_LEAVE"
+                        ? "leave"
+                        : "inactive"
+                    }`}
                   >
-                    {emp.department}
+                    {emp.status}
                   </span>
                 </td>
-                <td className="hide-lg">{emp.jobTitle}</td>
-                <td className="hide-xl">{emp.contract}</td>
-                <td className="hide-xl">{emp.attendance}</td>
-                <td className="actions">
-                  <button className="details-btn">See Details</button>
-                  <button className="more-btn">
-                    <MoreVertical size={14} />
-                  </button>
+                <td className="hide-lg">
+                  {emp.salary ? `$${emp.salary.toLocaleString()}` : "-"}
                 </td>
+
+                {showActions && (
+                  <td className="actions">
+                    <div className="action-buttons">
+                      <button
+                        className="icon-btn"
+                        onClick={() => handleEdit(emp)}
+                        title="Edit"
+                      >
+                        <Edit size={14} />
+                      </button>
+                      <button
+                        className="icon-btn danger"
+                        onClick={() => handleDelete(emp.id)}
+                        title="Delete"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+                    </div>
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>
@@ -140,6 +210,15 @@ function EmployeeView({
           </div>
         )}
       </div>
+
+      {/* Employee Form Modal */}
+      {showForm && (
+        <EmployeeForm
+          employee={selectedEmployee}
+          onSubmit={handleFormSubmit}
+          onClose={() => setShowForm(false)}
+        />
+      )}
     </div>
   );
 }
