@@ -1,0 +1,256 @@
+.employee-view {
+  padding: 2rem;
+}
+
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.employee-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.employee-header p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.employee-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.export-btn,
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.export-btn:hover {
+  background: #f9fafb;
+}
+
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+}
+
+.tabs {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+.search-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-field {
+  position: relative;
+  flex: 1;
+}
+
+.search-field input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.employee-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.employee-table th,
+.employee-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.employee-table th {
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.employee-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.emp-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom right, #3b82f6, #8b5cf6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.emp-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.emp-email {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.dept-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.dept-badge.green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.dept-badge.blue {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.dept-badge.purple {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.dept-badge.orange {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.actions {
+  text-align: right;
+}
+
+.details-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #e5e7eb;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.more-btn:hover {
+  background: #f3f4f6;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: #6b7280;
+}
+
+.hide-md {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-md {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-lg {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hide-xl {
+    display: table-cell;
+  }
+}

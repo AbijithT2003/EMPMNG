@@ -1,0 +1,63 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary Button (Blue) */
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+}
+
+/* Secondary Button (Gray) */
+.btn.secondary {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.btn.secondary:hover {
+  background: #e5e7eb;
+}
+
+/* Outline Button */
+.btn.outline {
+  background: transparent;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.btn.outline:hover {
+  background: #eff6ff;
+}
+
+/* Danger Button */
+.btn.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn.danger:hover {
+  background: #dc2626;
+}
+
+/* Disabled state */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

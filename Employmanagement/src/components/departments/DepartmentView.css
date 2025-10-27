@@ -1,0 +1,139 @@
+.department-view {
+  padding: 2rem;
+}
+
+.department-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.department-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.department-header p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.department-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filter-btn,
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-btn:hover {
+  background: #f9fafb;
+}
+
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+}
+
+.department-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.department-table th,
+.department-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.department-table th {
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.department-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.dept-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dept-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dept-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.details-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #e5e7eb;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.more-btn:hover {
+  background: #f3f4f6;
+}
+
+.actions {
+  text-align: right;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: #6b7280;
+}
