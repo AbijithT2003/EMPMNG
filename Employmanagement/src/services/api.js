@@ -61,6 +61,36 @@ class ApiService {
       method: "DELETE",
     });
   }
+  
+
+  // Department endpoints
+  async getDepartments() {
+    return this.request("/departments");
+  }
+
+  async getDepartment(id) {
+    return this.request(`/departments/${id}`);
+  }
+
+  async createDepartment(departmentData) {
+    return this.request("/departments", {
+      method: "POST",
+      body: JSON.stringify(departmentData),
+    });
+  }
+
+  async updateDepartment(id, departmentData) {
+    return this.request(`/departments/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(departmentData),
+    });
+  }
+
+  async deleteDepartment(id) {
+    return this.request(`/departments/${id}`, {
+      method: "DELETE",
+    });
+  }
 }
 
 export default new ApiService();

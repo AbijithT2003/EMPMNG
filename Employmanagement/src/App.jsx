@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { departments } from "./sampledata/SampleData";
 import Sidebar from "./components/layout/Sidebar";
 import Header from "./components/layout/Header";
 import EmployeeView from "./components/employees/EmployeeView";
@@ -15,11 +14,18 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+ const [departments, setDepartments] = useState([]);
 
   // Fetch employees on mount
   useEffect(() => {
     fetchEmployees();
   }, []);
+  useEffect(() => {
+    fetchEmployees();
+    fetchDepartments(); // 👈 new
+  }, []);
+
+
 
   const fetchEmployees = async () => {
     try {
@@ -32,6 +38,14 @@ function App() {
       console.error('Failed to fetch employees:', err);
     } finally {
       setLoading(false);
+    }
+  };
+  const fetchDepartments = async () => {
+    try {
+      const data = await apiService.getDepartments();
+      setDepartments(data);
+    } catch (err) {
+      console.error("Failed to fetch departments:", err);
     }
   };
 
@@ -91,17 +105,19 @@ function App() {
 
         <main className="page-content">
           {loading && (
-            <div style={{ padding: '2rem', textAlign: 'center' }}>
+            <div style={{ padding: "2rem", textAlign: "center" }}>
               Loading...
             </div>
           )}
-          
+
           {error && (
-            <div style={{ 
-              padding: '2rem', 
-              textAlign: 'center', 
-              color: '#ef4444' 
-            }}>
+            <div
+              style={{
+                padding: "2rem",
+                textAlign: "center",
+                color: "#ef4444",
+              }}
+            >
               Error: {error}
             </div>
           )}
@@ -120,7 +136,11 @@ function App() {
                   onDeleteEmployee={handleDeleteEmployee}
                 />
               ) : (
-                <DepartmentView departments={departments} employees={employees} />
+                <DepartmentView
+                  departments={departments}
+                  employees={employees}
+                  searchQuery={searchQuery}
+                />
               )}
             </>
           )}
