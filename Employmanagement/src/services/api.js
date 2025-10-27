@@ -1,4 +1,6 @@
 // Employmanagement/src/services/api.js
+
+
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api";
 
@@ -61,7 +63,6 @@ class ApiService {
       method: "DELETE",
     });
   }
-  
 
   // Department endpoints
   async getDepartments() {
@@ -91,6 +92,11 @@ class ApiService {
       method: "DELETE",
     });
   }
+  // Get all departments along with their employees
+  async getDepartmentsWithEmployees() {
+    return this.request("/departments/with-employees");
+  }
+
 }
 
 export default new ApiService();

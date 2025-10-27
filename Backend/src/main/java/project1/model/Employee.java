@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "employees",
        indexes = {
@@ -39,12 +41,6 @@ public class Employee extends BaseEntity {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "employee_roles", joinColumns = @JoinColumn(name = "employee_id"))
-    @Builder.Default
-    private Set<Role> roles = new HashSet<>();
-
     @NotNull(message = "Join date is required")
     @Column(nullable = false)
     private LocalDate joinDate;
@@ -67,6 +63,7 @@ public class Employee extends BaseEntity {
     @Column(name = "salary")
     private Double salary;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private Department department;

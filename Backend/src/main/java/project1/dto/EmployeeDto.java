@@ -1,6 +1,7 @@
 // EmployeeDto.java
 package project1.dto;
-
+import project1.model.enums.EmploymentStatus;
+import project1.model.enums.ContractType;
 import lombok.*;
 
 @Data
@@ -14,4 +15,7 @@ public class EmployeeDto {
     private String email;
     private String jobTitle;
     private Double salary;
+    private EmploymentStatus status;
+    private ContractType contractType;
+    private DepartmentDto department;
 }

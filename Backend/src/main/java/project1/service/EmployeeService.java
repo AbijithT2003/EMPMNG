@@ -4,8 +4,12 @@ import project1.dto.EmployeeCreateDto;
 import project1.dto.EmployeeDto;
 import project1.exception.ResourceNotFound;
 import project1.model.Employee;
+import project1.model.Department;
 import project1.repository.EmployeeRepository;
+import project1.model.enums.ContractType;
 import project1.model.enums.EmploymentStatus;
+import project1.dto.DepartmentDto;
+import project1.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,7 +26,8 @@ import java.util.stream.Collectors;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
-
+    private final DepartmentRepository departmentRepository; 
+    
     public List<EmployeeDto> getAllEmployees() {
         log.info("Fetching all employees");
         return employeeRepository.findAll().stream()
@@ -41,6 +46,20 @@ public class EmployeeService {
             throw new IllegalArgumentException("Employee with this email already exists");
         }
         
+          Department department = null;
+        if (createDto.getDepartmentId() != null) {
+            department = departmentRepository.findById(createDto.getDepartmentId())
+            .orElseThrow(() -> new ResourceNotFound("Department not found with ID " + createDto.getDepartmentId()));
+}       
+
+        // ✅ Safely parse enums from DTO (or fallback to defaults)
+        EmploymentStatus status = createDto.getStatus() != null
+                ? createDto.getStatus()
+                : EmploymentStatus.ACTIVE;
+
+        ContractType contractType = createDto.getContractType() != null
+                ? createDto.getContractType()
+                : ContractType.FULL_TIME;
         Employee employee = Employee.builder()
                 .employeeNumber(generateEmployeeNumber())
                 .firstName(createDto.getFirstName())
@@ -49,7 +68,9 @@ public class EmployeeService {
                 .jobTitle(createDto.getJobTitle())
                 .salary(createDto.getSalary())  // Fixed: Added salary mapping
                 .joinDate(LocalDate.now())
-                .status(EmploymentStatus.ACTIVE)
+                .status(status)
+                .contractType(contractType) // Fixed: Set default contract type
+                .department(department) // Fixed: Set department if provided
                 .build();
         
         Employee saved = employeeRepository.save(employee);
@@ -66,6 +87,18 @@ public class EmployeeService {
         existing.setEmail(updatedDto.getEmail());
         existing.setJobTitle(updatedDto.getJobTitle());
         existing.setSalary(updatedDto.getSalary());  // Fixed: Added salary update
+        existing.setStatus(updatedDto.getStatus());
+        existing.setContractType(updatedDto.getContractType());
+        
+        if (updatedDto.getDepartment() != null && updatedDto.getDepartment().getName() != null) {
+            Department dept = departmentRepository.findByName(updatedDto.getDepartment().getName())
+                    .orElseGet(() -> {
+                        Department newDept = new Department();
+                        newDept.setName(updatedDto.getDepartment().getName());
+                        return departmentRepository.save(newDept);
+                    });
+            existing.setDepartment(dept);
+        }
         
         Employee updated = employeeRepository.save(existing);
         return convertToDto(updated);
@@ -92,7 +125,15 @@ public class EmployeeService {
                 .lastName(employee.getLastName())
                 .email(employee.getEmail())
                 .jobTitle(employee.getJobTitle())
-                .salary(employee.getSalary())  // Fixed: Added salary to DTO conversion
+                .salary(employee.getSalary()) 
+                .status(employee.getStatus())
+                .contractType(employee.getContractType())
+                .department(employee.getDepartment() != null
+                        ? DepartmentDto.builder()
+                            .departmentid(employee.getDepartment().getId())
+                            .name(employee.getDepartment().getName())
+                            .build()
+                        : null) // Fixed: Added salary to DTO conversion
                 .build();
     }
     

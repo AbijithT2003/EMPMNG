@@ -5,5 +5,4 @@ public enum ContractType {
     PART_TIME,
     CONTRACT,
     INTERN,
-    TEMPORARY
 }

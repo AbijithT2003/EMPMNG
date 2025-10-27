@@ -19,9 +19,6 @@ function App() {
   // Fetch employees on mount
   useEffect(() => {
     fetchEmployees();
-  }, []);
-  useEffect(() => {
-    fetchEmployees();
     fetchDepartments(); // 👈 new
   }, []);
 
@@ -127,6 +124,7 @@ function App() {
               {activeView === "employees" ? (
                 <EmployeeView
                   employees={employees}
+                  departments={departments}
                   searchQuery={searchQuery}
                   setSearchQuery={setSearchQuery}
                   activeTab={activeTab}

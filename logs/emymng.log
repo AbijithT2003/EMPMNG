@@ -421,3 +421,430 @@ This generated password is for development use only. Your security configuration
 2025-10-27T14:28:01.150+05:30  INFO 6326 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-27T14:28:01.152+05:30  INFO 6326 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-10-27T14:28:01.162+05:30  INFO 6326 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-27T15:08:39.292+05:30  INFO 26253 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 26253 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-27T15:08:39.294+05:30  INFO 26253 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T15:08:40.029+05:30  INFO 26253 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T15:08:40.030+05:30  INFO 26253 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-27T15:08:40.070+05:30  INFO 26253 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T15:08:40.072+05:30  INFO 26253 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T15:08:40.073+05:30  INFO 26253 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 JDBC repository interfaces.
+2025-10-27T15:08:40.100+05:30  INFO 26253 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T15:08:40.101+05:30  INFO 26253 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T15:08:40.138+05:30  INFO 26253 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2025-10-27T15:08:40.755+05:30  INFO 26253 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T15:08:40.770+05:30  INFO 26253 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T15:08:40.771+05:30  INFO 26253 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-27T15:08:40.822+05:30  INFO 26253 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T15:08:40.823+05:30  INFO 26253 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1477 ms
+2025-10-27T15:08:41.009+05:30  INFO 26253 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T15:08:41.051+05:30  INFO 26253 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-27T15:08:41.087+05:30  INFO 26253 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T15:08:41.299+05:30  INFO 26253 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T15:08:41.324+05:30  INFO 26253 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T15:08:41.620+05:30  INFO 26253 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7c9372ed
+2025-10-27T15:08:41.621+05:30  INFO 26253 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T15:08:41.644+05:30  WARN 26253 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T15:08:41.659+05:30  INFO 26253 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T15:08:42.441+05:30  INFO 26253 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T15:08:42.685+05:30  INFO 26253 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T15:08:43.038+05:30  WARN 26253 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T15:08:43.239+05:30  WARN 26253 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a567e26c-00d9-4c97-813c-57f4218cbcfd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-27T15:08:43.249+05:30  INFO 26253 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-27T15:08:43.804+05:30  INFO 26253 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T15:08:43.817+05:30  INFO 26253 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 4.958 seconds (process running for 5.231)
+2025-10-27T15:08:48.863+05:30  INFO 26253 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-27T15:08:48.865+05:30  INFO 26253 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-27T15:08:48.869+05:30  INFO 26253 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T15:08:48.872+05:30  INFO 26253 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-27T15:08:48.884+05:30  INFO 26253 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-27T15:41:21.109+05:30  INFO 36511 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 36511 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-27T15:41:21.115+05:30  INFO 36511 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T15:41:22.155+05:30  INFO 36511 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T15:41:22.156+05:30  INFO 36511 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-27T15:41:22.204+05:30  INFO 36511 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T15:41:22.205+05:30  INFO 36511 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T15:41:22.206+05:30  INFO 36511 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 JDBC repository interfaces.
+2025-10-27T15:41:22.217+05:30  INFO 36511 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T15:41:22.219+05:30  INFO 36511 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T15:41:22.256+05:30  INFO 36511 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2025-10-27T15:41:22.880+05:30  INFO 36511 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T15:41:22.894+05:30  INFO 36511 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T15:41:22.894+05:30  INFO 36511 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-27T15:41:22.945+05:30  INFO 36511 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T15:41:22.946+05:30  INFO 36511 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1727 ms
+2025-10-27T15:41:23.203+05:30  INFO 36511 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T15:41:23.242+05:30  INFO 36511 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-27T15:41:23.268+05:30  INFO 36511 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T15:41:23.551+05:30  INFO 36511 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T15:41:23.578+05:30  INFO 36511 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T15:41:23.857+05:30  INFO 36511 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f921e32
+2025-10-27T15:41:23.858+05:30  INFO 36511 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T15:41:23.884+05:30  WARN 36511 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T15:41:23.900+05:30  INFO 36511 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T15:41:24.818+05:30  INFO 36511 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T15:41:25.109+05:30  INFO 36511 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T15:41:25.473+05:30  WARN 36511 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T15:41:25.807+05:30  INFO 36511 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-27T15:41:25.849+05:30  WARN 36511 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 20185915-69a5-4bf7-8c18-a171396443b7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-27T15:41:25.856+05:30  INFO 36511 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-27T15:41:26.287+05:30  INFO 36511 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T15:41:26.302+05:30  INFO 36511 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 5.669 seconds (process running for 6.078)
+2025-10-27T15:41:27.114+05:30  INFO 36511 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-27T15:41:27.114+05:30  INFO 36511 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-27T15:41:27.116+05:30  INFO 36511 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-27T15:41:45.270+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T15:41:45.270+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T15:41:45.276+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T15:41:45.412+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T15:41:45.433+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T15:41:45.434+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T15:44:11.518+05:30  INFO 36511 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Creating new employee: ji@gmail.com
+2025-10-27T15:46:19.918+05:30  INFO 36511 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-27T15:46:19.921+05:30  INFO 36511 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-27T15:46:19.928+05:30  INFO 36511 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T15:46:19.931+05:30  INFO 36511 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-27T15:46:19.944+05:30  INFO 36511 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-27T16:54:17.670+05:30  INFO 57742 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 57742 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-27T16:54:17.672+05:30  INFO 57742 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T16:54:18.840+05:30  INFO 57742 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T16:54:18.841+05:30  INFO 57742 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-27T16:54:18.887+05:30  INFO 57742 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T16:54:18.889+05:30  INFO 57742 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T16:54:18.890+05:30  INFO 57742 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 0 JDBC repository interfaces.
+2025-10-27T16:54:18.906+05:30  INFO 57742 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T16:54:18.907+05:30  INFO 57742 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T16:54:18.946+05:30  INFO 57742 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2025-10-27T16:54:19.578+05:30  INFO 57742 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T16:54:19.591+05:30  INFO 57742 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T16:54:19.592+05:30  INFO 57742 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-27T16:54:19.629+05:30  INFO 57742 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T16:54:19.630+05:30  INFO 57742 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1911 ms
+2025-10-27T16:54:19.888+05:30  INFO 57742 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T16:54:19.935+05:30  INFO 57742 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-27T16:54:19.964+05:30  INFO 57742 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T16:54:20.193+05:30  INFO 57742 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T16:54:20.228+05:30  INFO 57742 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T16:54:20.552+05:30  INFO 57742 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47d81427
+2025-10-27T16:54:20.555+05:30  INFO 57742 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T16:54:20.584+05:30  WARN 57742 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T16:54:20.607+05:30  INFO 57742 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T16:54:21.500+05:30  INFO 57742 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T16:54:21.753+05:30  INFO 57742 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T16:54:22.019+05:30  INFO 57742 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-27T16:54:22.433+05:30  WARN 57742 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T16:54:22.755+05:30  INFO 57742 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-27T16:54:22.794+05:30  WARN 57742 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 12739054-1333-48fb-8d82-b380952ad138
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-27T16:54:22.802+05:30  INFO 57742 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-27T16:54:23.226+05:30  INFO 57742 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T16:54:23.243+05:30  INFO 57742 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 6.022 seconds (process running for 6.413)
+2025-10-27T16:54:23.757+05:30  INFO 57742 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-27T16:54:23.757+05:30  INFO 57742 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-27T16:54:23.758+05:30  INFO 57742 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-27T16:54:27.401+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T16:54:27.401+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T16:54:27.409+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T16:54:27.541+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T16:54:27.562+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T16:54:27.562+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T16:55:13.930+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Creating new employee: j1@gmail.com
+2025-10-27T16:56:05.571+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Creating new employee: j12@gmail.com
+2025-10-27T16:57:22.202+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Updating employee with ID 1
+2025-10-27T16:57:22.204+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Updating employee with ID: 1
+2025-10-27T16:59:42.154+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T16:59:42.155+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T16:59:42.157+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T16:59:42.178+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T16:59:42.194+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T16:59:42.197+05:30  INFO 57742 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T17:04:12.053+05:30  INFO 57742 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-27T17:04:12.055+05:30  INFO 57742 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-27T17:04:12.063+05:30  INFO 57742 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T17:04:12.068+05:30  INFO 57742 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-27T17:04:12.081+05:30  INFO 57742 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-27T22:16:16.015+05:30  INFO 25670 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 25670 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-27T22:16:16.019+05:30  INFO 25670 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T22:16:17.805+05:30  INFO 25670 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T22:16:17.807+05:30  INFO 25670 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-27T22:16:17.924+05:30  INFO 25670 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T22:16:17.926+05:30  INFO 25670 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T22:16:17.927+05:30  INFO 25670 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 0 JDBC repository interfaces.
+2025-10-27T22:16:17.941+05:30  INFO 25670 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T22:16:17.942+05:30  INFO 25670 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T22:16:17.982+05:30  INFO 25670 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2025-10-27T22:16:19.072+05:30  INFO 25670 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T22:16:19.093+05:30  INFO 25670 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T22:16:19.094+05:30  INFO 25670 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-27T22:16:19.152+05:30  INFO 25670 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T22:16:19.153+05:30  INFO 25670 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3043 ms
+2025-10-27T22:16:19.538+05:30  INFO 25670 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T22:16:19.615+05:30  INFO 25670 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-27T22:16:19.666+05:30  INFO 25670 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T22:16:20.091+05:30  INFO 25670 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T22:16:20.141+05:30  INFO 25670 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T22:16:20.717+05:30  INFO 25670 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4067634b
+2025-10-27T22:16:20.719+05:30  INFO 25670 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T22:16:20.769+05:30  WARN 25670 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T22:16:20.802+05:30  INFO 25670 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T22:16:22.276+05:30  INFO 25670 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T22:16:22.652+05:30  INFO 25670 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:16:23.131+05:30  INFO 25670 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-27T22:16:23.944+05:30  WARN 25670 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T22:16:24.419+05:30  INFO 25670 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-27T22:16:24.464+05:30  WARN 25670 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3e9804e2-c425-4600-9ee5-890732fec4b3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-27T22:16:24.475+05:30  INFO 25670 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-27T22:16:25.195+05:30  INFO 25670 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T22:16:25.216+05:30  INFO 25670 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 9.878 seconds (process running for 10.8)
+2025-10-27T22:16:27.938+05:30  INFO 25670 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-27T22:16:27.939+05:30  INFO 25670 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-27T22:16:27.941+05:30  INFO 25670 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-27T22:16:39.243+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:16:39.245+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:16:39.275+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:16:39.627+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:16:39.647+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:16:39.647+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:18:06.629+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Creating new employee: ji23@gmail.com
+2025-10-27T22:18:13.753+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Creating new employee: ji23@gmail.com
+2025-10-27T22:18:17.875+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Creating new employee: ji23@gmail.com
+2025-10-27T22:18:21.613+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Creating new employee: ji23@gmail.com
+2025-10-27T22:18:26.428+05:30  INFO 25670 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Creating new employee: ji23@gmail.com
+2025-10-27T22:19:01.653+05:30  INFO 25670 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-27T22:19:01.654+05:30  INFO 25670 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-27T22:19:01.661+05:30  INFO 25670 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:19:01.664+05:30  INFO 25670 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-27T22:19:01.685+05:30  INFO 25670 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-27T22:29:37.858+05:30  INFO 30487 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 30487 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-27T22:29:37.861+05:30  INFO 30487 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T22:29:39.138+05:30  INFO 30487 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T22:29:39.139+05:30  INFO 30487 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-27T22:29:39.207+05:30  INFO 30487 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T22:29:39.209+05:30  INFO 30487 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T22:29:39.209+05:30  INFO 30487 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 0 JDBC repository interfaces.
+2025-10-27T22:29:39.225+05:30  INFO 30487 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T22:29:39.226+05:30  INFO 30487 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T22:29:39.269+05:30  INFO 30487 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2025-10-27T22:29:40.082+05:30  INFO 30487 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T22:29:40.099+05:30  INFO 30487 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T22:29:40.099+05:30  INFO 30487 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-27T22:29:40.151+05:30  INFO 30487 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T22:29:40.152+05:30  INFO 30487 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2222 ms
+2025-10-27T22:29:40.537+05:30  INFO 30487 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T22:29:40.585+05:30  INFO 30487 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-27T22:29:40.627+05:30  INFO 30487 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T22:29:40.953+05:30  INFO 30487 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T22:29:40.994+05:30  INFO 30487 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T22:29:41.376+05:30  INFO 30487 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@31c5304f
+2025-10-27T22:29:41.377+05:30  INFO 30487 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T22:29:41.407+05:30  WARN 30487 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T22:29:41.434+05:30  INFO 30487 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T22:29:42.373+05:30  INFO 30487 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T22:29:42.592+05:30  INFO 30487 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:29:42.990+05:30  INFO 30487 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-27T22:29:43.646+05:30  WARN 30487 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T22:29:44.077+05:30  INFO 30487 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-27T22:29:44.137+05:30  WARN 30487 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8f9ca9f7-a31e-43fc-8d8c-22633bf0a1b9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-27T22:29:44.147+05:30  INFO 30487 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-27T22:29:44.794+05:30  INFO 30487 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T22:29:44.813+05:30  INFO 30487 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 7.456 seconds (process running for 7.96)
+2025-10-27T22:29:46.892+05:30  INFO 30487 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-27T22:29:46.893+05:30  INFO 30487 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-27T22:29:46.894+05:30  INFO 30487 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-27T22:32:54.455+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-2] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:32:54.458+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-2] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:33:37.759+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-4] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:33:37.760+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-4] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:36:39.026+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-6] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:36:39.028+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-6] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:36:40.403+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-8] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:36:40.405+05:30  WARN 30487 --- [EMYMNG] [http-nio-8080-exec-8] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class project1.model.Department]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': no back reference property found from type `java.util.List<project1.model.Employee>`
+2025-10-27T22:37:48.127+05:30  INFO 30487 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-27T22:37:48.128+05:30  INFO 30487 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-27T22:37:48.136+05:30  INFO 30487 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:37:48.138+05:30  INFO 30487 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-27T22:37:48.150+05:30  INFO 30487 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-27T22:37:56.535+05:30  INFO 33279 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 33279 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-27T22:37:56.537+05:30  INFO 33279 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T22:37:57.596+05:30  INFO 33279 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T22:37:57.598+05:30  INFO 33279 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-27T22:37:57.666+05:30  INFO 33279 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T22:37:57.668+05:30  INFO 33279 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-27T22:37:57.669+05:30  INFO 33279 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 0 JDBC repository interfaces.
+2025-10-27T22:37:57.689+05:30  INFO 33279 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-27T22:37:57.690+05:30  INFO 33279 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T22:37:57.733+05:30  INFO 33279 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2025-10-27T22:37:58.426+05:30  INFO 33279 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T22:37:58.441+05:30  INFO 33279 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T22:37:58.443+05:30  INFO 33279 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-27T22:37:58.497+05:30  INFO 33279 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T22:37:58.498+05:30  INFO 33279 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1916 ms
+2025-10-27T22:37:58.858+05:30  INFO 33279 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T22:37:58.941+05:30  INFO 33279 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-27T22:37:58.979+05:30  INFO 33279 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T22:37:59.222+05:30  INFO 33279 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T22:37:59.253+05:30  INFO 33279 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T22:37:59.649+05:30  INFO 33279 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cee3e05
+2025-10-27T22:37:59.650+05:30  INFO 33279 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T22:37:59.672+05:30  WARN 33279 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T22:37:59.690+05:30  INFO 33279 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T22:38:00.522+05:30  INFO 33279 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T22:38:00.711+05:30  INFO 33279 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:38:00.942+05:30  INFO 33279 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-27T22:38:01.323+05:30  WARN 33279 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T22:38:01.644+05:30  INFO 33279 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-27T22:38:01.693+05:30  WARN 33279 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f7876eb9-74a2-4a93-a9da-8e1577fa381d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-27T22:38:01.699+05:30  INFO 33279 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-27T22:38:02.165+05:30  INFO 33279 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T22:38:02.185+05:30  INFO 33279 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 6.063 seconds (process running for 6.484)
+2025-10-27T22:38:02.594+05:30  INFO 33279 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-27T22:38:02.594+05:30  INFO 33279 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-27T22:38:02.595+05:30  INFO 33279 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-27T22:38:07.356+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Creating new department: Engineering
+2025-10-27T22:39:01.008+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Creating new employee: john.doe@company.com
+2025-10-27T22:41:58.945+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Creating new employee: sarah.miller@company.com
+2025-10-27T22:42:44.098+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Creating new department: Human Resources
+2025-10-27T22:42:52.490+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Creating new department: Marketing
+2025-10-27T22:42:59.755+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Creating new department: Product Management
+2025-10-27T22:43:06.334+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Creating new department: Design
+2025-10-27T22:43:18.352+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:44:01.142+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:44:01.143+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:44:13.481+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:44:13.483+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:44:22.568+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:44:22.569+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:44:32.271+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:44:32.272+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:44:40.462+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:44:40.463+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.756+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:15.756+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:15.757+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.784+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:15.784+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:15.785+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.805+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:15.806+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.807+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:15.808+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.807+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:15.809+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:15.814+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:15.814+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:15.817+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.860+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:15.860+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:15.882+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:48.220+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:48.220+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:48.220+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:48.223+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:48.223+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:48.225+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:51.718+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:51.718+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:51.718+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:45:51.719+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:45:51.719+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:45:51.720+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:46:08.522+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Deleting employee with ID 2
+2025-10-27T22:46:13.048+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Deleting employee with ID 3
+2025-10-27T22:46:17.277+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Deleting employee with ID 4
+2025-10-27T22:46:21.533+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Deleting employee with ID 5
+2025-10-27T22:46:24.147+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:46:24.147+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:46:24.149+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:46:24.153+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:46:24.153+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:46:24.156+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:47:03.004+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Creating new employee: abi@gmail.com
+2025-10-27T22:54:28.071+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:54:28.072+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:54:28.079+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:54:28.096+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:54:28.099+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:54:28.106+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:58:01.637+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Updating employee with ID 1
+2025-10-27T22:58:01.639+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Updating employee with ID: 1
+2025-10-27T22:58:14.921+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:58:14.921+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:58:14.921+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-27T22:58:14.922+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:58:14.922+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-27T22:58:14.925+05:30  INFO 33279 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-27T22:59:45.821+05:30  INFO 33279 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-27T22:59:45.824+05:30  INFO 33279 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-27T22:59:45.840+05:30  INFO 33279 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:59:45.845+05:30  INFO 33279 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-27T22:59:45.865+05:30  INFO 33279 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

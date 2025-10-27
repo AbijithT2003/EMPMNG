@@ -1,6 +1,8 @@
 package project1.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -35,7 +37,7 @@ public class Department extends BaseEntity {
     private Employee manager;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.PERSIST)
-    @JsonIgnore  // To prevent circular references during serialization 
+    @JsonManagedReference //To prevent infinite loop during serialization
     @Builder.Default
     private List<Employee> employees = new ArrayList<>();
 
