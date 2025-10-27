@@ -8,12 +8,14 @@ import {
   Edit,
   Trash2,
   Building2,
+  GroupIcon,
 } from "lucide-react";
 import EmployeeForm from "./EmployeeForm";
 import "./EmployeeView.css";
 
 function EmployeeView({
   employees,
+  departments=[],
   searchQuery,
   setSearchQuery,
   activeTab,
@@ -65,6 +67,11 @@ function EmployeeView({
     setShowForm(false);
   };
 
+  const groupedDepartments = departments.map((dept) => ({
+    ...dept,
+    employees: employees.filter((emp) => emp.departmentId === dept.id),
+  }));
+
   return (
     <div className="employee-view">
       {/* Header */}
@@ -93,12 +100,13 @@ function EmployeeView({
           <Users size={14} />
           Manage Employees
         </button>
+        {/*show employess in department cards*/}
         <button
-          className={`tab-btn ${activeTab === "timeoff" ? "active" : ""}`}
-          onClick={() => setActiveTab("timeoff")}
+          className={`tab-btn ${activeTab === "departments" ? "active" : ""}`}
+          onClick={() => setActiveTab("departments")}
         >
-          <Calendar size={14} />
-          Request Time Off
+          <GroupIcon size={14} />
+          Departments View
         </button>
       </div>
 
@@ -210,6 +218,31 @@ function EmployeeView({
           </div>
         )}
       </div>
+      {/* Department Cards View */}
+      {activeTab === "departments" && (
+        <div className="department-cards-container">
+          {groupedDepartments.map((dept) => (
+            <div key={dept.id} className="department-card">
+              <h4>{dept.name}</h4>
+              <p><strong>Head:</strong> {dept.head || "N/A"}</p>
+              <p><strong>Employees:</strong> {dept.employees.length}</p>
+
+              <div className="employee-list">
+                {dept.employees.length > 0 ? (
+                  dept.employees.map((emp) => (
+                    <div key={emp.id} className="employee-item">
+                      <span>{emp.firstName} {emp.lastName}</span>
+                      <span className="emp-title">{emp.jobTitle}</span>
+                    </div>
+                  ))
+                ) : (
+                  <p className="no-emp">No employees assigned</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Employee Form Modal */}
       {showForm && (

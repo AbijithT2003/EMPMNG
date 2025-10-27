@@ -229,7 +229,12 @@ function EmployeeForm({ employee, onSubmit, onClose }) {
             >
               Cancel
             </button>
-            <button type="submit" className="btn primary" disabled={loading}>
+            <button
+              type="submit"
+              onClick={onClose}
+              className="btn primary"
+              disabled={loading}
+            >
               {loading ? "Saving..." : employee ? "Update" : "Create"}
             </button>
           </div>
