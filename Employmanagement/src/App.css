@@ -1,5 +1,6 @@
 .app-container {
-  min-height: 100%;
+  display: flex;
+  min-height: 100vh;
   background-color: #f9fafb;
   display: flex;
   position: relative;
@@ -10,11 +11,13 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height : 100vh;
 }
 
 .page-content {
   flex: 1;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -24,8 +27,20 @@
   z-index: 40;
 }
 
+/* Fix z-index stacking */
+.employee-view {
+  position: relative;
+  z-index: 1;
+}
+
+.filter-container {
+  position: relative;
+  z-index: 100;
+}
+
 @media (min-width: 1024px) {
   .overlay {
     display: none;
   }
 }
+ 

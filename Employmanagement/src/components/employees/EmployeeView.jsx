@@ -23,7 +23,7 @@ function EmployeeView({
   const [showFilter, setShowFilter] = useState(false);
   const [filters, setFilters] = useState({
     status: "",
-    department: "",
+    departmentId: "",
     contractType: "",
   });
   const toggleActions = () => setShowActions((prev) => !prev);
@@ -193,6 +193,7 @@ function EmployeeView({
       {/* Employee Table */}
       {activeTab === "employees" && (
         <div className="employee-table">
+          <div className="employee-table-wrapper">
           <table>
             <thead>
               <tr>
@@ -274,6 +275,7 @@ function EmployeeView({
               ))}
             </tbody>
           </table>
+          </div>
 
           {filteredEmployees.length === 0 && (
             <div className="empty-state">

@@ -6,6 +6,140 @@
   width: 100%;
   background: #f9fafb;
 }
+/* src/components/departments/DepartmentView.css */
+
+.department-view {
+  padding: 1.5rem;
+  color: #e5e7eb;
+  background: #e7e9ec;
+  border-radius: 12px;
+}
+
+.department-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.department-header h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #f9fafb;
+}
+
+.department-header p {
+  color: #9ca3af;
+  margin: 0.2rem 0 0 0;
+}
+
+.department-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn,
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.filter-btn {
+  background: #374151;
+  color: #d1d5db;
+}
+
+.filter-btn:hover {
+  background: #4b5563;
+}
+
+.add-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+}
+
+.department-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.department-table th,
+.department-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+}
+
+.department-table th {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.dept-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dept-icon {
+  background: #4b5563;
+  border-radius: 8px;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dept-name {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.details-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  text-decoration: underline;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.more-btn:hover {
+  color: #d1d5db;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: #9ca3af;
+}
 
 /* =============================
    Header Section

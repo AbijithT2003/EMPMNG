@@ -685,3 +685,546 @@ This generated password is for development use only. Your security configuration
 2025-10-28T12:53:40.266+05:30  INFO 6463 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-28T12:53:40.274+05:30  INFO 6463 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-10-28T12:53:40.301+05:30  INFO 6463 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T14:11:16.226+05:30  INFO 9084 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 9084 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-28T14:11:16.228+05:30  INFO 9084 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T14:11:17.437+05:30  INFO 9084 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T14:11:17.439+05:30  INFO 9084 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-28T14:11:17.485+05:30  INFO 9084 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T14:11:17.488+05:30  INFO 9084 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T14:11:17.490+05:30  INFO 9084 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 JDBC repository interfaces.
+2025-10-28T14:11:17.506+05:30  INFO 9084 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T14:11:17.507+05:30  INFO 9084 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T14:11:17.551+05:30  INFO 9084 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2025-10-28T14:11:18.261+05:30  INFO 9084 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T14:11:18.281+05:30  INFO 9084 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T14:11:18.282+05:30  INFO 9084 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T14:11:18.343+05:30  INFO 9084 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T14:11:18.344+05:30  INFO 9084 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2068 ms
+2025-10-28T14:11:18.674+05:30  INFO 9084 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T14:11:18.737+05:30  INFO 9084 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T14:11:18.775+05:30  INFO 9084 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T14:11:19.086+05:30  INFO 9084 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T14:11:19.128+05:30  INFO 9084 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T14:11:19.491+05:30  INFO 9084 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12e40e98
+2025-10-28T14:11:19.492+05:30  INFO 9084 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T14:11:19.538+05:30  WARN 9084 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T14:11:19.565+05:30  INFO 9084 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T14:11:20.725+05:30  INFO 9084 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T14:11:20.939+05:30  INFO 9084 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T14:11:21.245+05:30  INFO 9084 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T14:11:21.753+05:30  WARN 9084 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T14:11:22.116+05:30  INFO 9084 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-28T14:11:22.181+05:30  WARN 9084 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4ceee120-1fe1-452c-9895-d074d53e1ad5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-28T14:11:22.190+05:30  INFO 9084 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-28T14:11:22.714+05:30  INFO 9084 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-28T14:11:22.730+05:30  INFO 9084 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 6.928 seconds (process running for 7.384)
+2025-10-28T14:11:25.350+05:30  INFO 9084 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-28T14:11:25.351+05:30  INFO 9084 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-28T14:11:25.352+05:30  INFO 9084 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-28T14:11:29.816+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:11:29.816+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:11:29.826+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:11:30.054+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:11:30.054+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:11:30.106+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:11:58.818+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:11:58.818+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:11:58.819+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:11:58.820+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:11:58.820+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:11:58.821+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:13:11.709+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:13:11.709+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:13:11.709+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:13:11.710+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:13:11.710+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:13:11.711+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:16:51.309+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:16:51.309+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:16:51.310+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:16:51.321+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:16:51.324+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:16:51.327+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:19:50.783+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:19:50.783+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:19:50.784+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:19:50.786+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:19:50.787+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:19:50.787+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:20:39.052+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Updating employee with ID 6
+2025-10-28T14:20:39.053+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Updating employee with ID: 6
+2025-10-28T14:20:39.124+05:30  WARN 9084 --- [EMYMNG] [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23514
+2025-10-28T14:20:39.125+05:30 ERROR 9084 --- [EMYMNG] [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: new row for relation "employees" violates check constraint "employees_status_check"
+  Detail: Failing row contains (6, 2025-10-27 22:39:01.115043, f, 2025-10-28 14:20:39.076487, FULL_TIME, john.doe@company.com, EMP00006, John, Software Engineer, 2025-10-27, Doe, ON_SITE, 1, null, 80000).
+2025-10-28T14:26:06.327+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:26:06.327+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:26:06.328+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:26:06.353+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:26:06.360+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:26:06.361+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:26:45.821+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Deleting employee with ID 1
+2025-10-28T14:37:24.208+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:37:24.208+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:37:24.208+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:37:24.236+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:37:24.236+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:37:24.237+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:40:23.679+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:40:23.680+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:40:23.680+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:40:23.681+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:40:23.681+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:40:23.683+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:40:31.953+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:40:31.953+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:40:31.955+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:40:31.955+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:40:31.956+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:40:31.956+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:49:21.961+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:49:21.961+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:49:21.962+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:49:21.966+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:49:21.966+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:49:21.967+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:51:11.990+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T14:51:11.990+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:51:11.992+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:51:12.021+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T14:51:12.021+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T14:51:12.019+05:30  INFO 9084 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T15:06:17.770+05:30  INFO 9084 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-28T15:06:17.778+05:30  INFO 9084 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-28T15:06:17.801+05:30  INFO 9084 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:06:17.808+05:30  INFO 9084 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:06:17.851+05:30  INFO 9084 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:59:02.028+05:30  INFO 10044 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 10044 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-28T15:59:02.031+05:30  INFO 10044 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:59:03.158+05:30  INFO 10044 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T15:59:03.160+05:30  INFO 10044 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-28T15:59:03.231+05:30  INFO 10044 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T15:59:03.233+05:30  INFO 10044 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T15:59:03.234+05:30  INFO 10044 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 0 JDBC repository interfaces.
+2025-10-28T15:59:03.253+05:30  INFO 10044 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T15:59:03.256+05:30  INFO 10044 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:59:03.299+05:30  INFO 10044 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2025-10-28T15:59:04.023+05:30  INFO 10044 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:59:04.042+05:30  INFO 10044 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:59:04.042+05:30  INFO 10044 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T15:59:04.109+05:30  INFO 10044 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:59:04.110+05:30  INFO 10044 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2024 ms
+2025-10-28T15:59:04.344+05:30  INFO 10044 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:59:04.814+05:30  INFO 10044 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@31ab4859
+2025-10-28T15:59:04.817+05:30  INFO 10044 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:59:04.986+05:30  INFO 10044 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:59:05.067+05:30  INFO 10044 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T15:59:05.127+05:30  INFO 10044 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:59:05.483+05:30  INFO 10044 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:59:05.560+05:30  WARN 10044 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T15:59:05.578+05:30  INFO 10044 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:59:06.409+05:30  INFO 10044 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:59:06.602+05:30  INFO 10044 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:59:07.019+05:30  INFO 10044 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T15:59:07.509+05:30  WARN 10044 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T15:59:07.944+05:30  INFO 10044 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-28T15:59:07.990+05:30  WARN 10044 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f2db9adc-42f9-4645-96fb-65c82bddcb47
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-28T15:59:08.000+05:30  INFO 10044 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-28T15:59:08.519+05:30  INFO 10044 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-28T15:59:08.547+05:30  INFO 10044 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 6.993 seconds (process running for 7.491)
+2025-10-28T15:59:11.229+05:30  INFO 10044 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-28T15:59:11.229+05:30  INFO 10044 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-28T15:59:11.230+05:30  INFO 10044 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-28T15:59:19.158+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T15:59:19.158+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T15:59:19.164+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T15:59:19.368+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T15:59:19.369+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T15:59:19.369+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T15:59:34.168+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T15:59:34.170+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T15:59:34.177+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T15:59:34.178+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T15:59:34.179+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T15:59:34.185+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:02:51.189+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:02:51.189+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:02:51.189+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:02:51.191+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:02:51.191+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:02:51.199+05:30  INFO 10044 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:02:56.863+05:30  INFO 10044 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-28T16:02:56.867+05:30  INFO 10044 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-28T16:02:56.879+05:30  INFO 10044 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T16:02:56.883+05:30  INFO 10044 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T16:02:56.900+05:30  INFO 10044 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T16:02:58.199+05:30  INFO 11666 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 11666 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-28T16:02:58.202+05:30  INFO 11666 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T16:02:59.262+05:30  INFO 11666 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T16:02:59.263+05:30  INFO 11666 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-28T16:02:59.313+05:30  INFO 11666 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T16:02:59.315+05:30  INFO 11666 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T16:02:59.316+05:30  INFO 11666 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JDBC repository interfaces.
+2025-10-28T16:02:59.334+05:30  INFO 11666 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T16:02:59.335+05:30  INFO 11666 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T16:02:59.381+05:30  INFO 11666 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+2025-10-28T16:03:00.088+05:30  INFO 11666 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T16:03:00.105+05:30  INFO 11666 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T16:03:00.105+05:30  INFO 11666 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T16:03:00.170+05:30  INFO 11666 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T16:03:00.171+05:30  INFO 11666 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1919 ms
+2025-10-28T16:03:00.536+05:30  INFO 11666 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T16:03:00.584+05:30  INFO 11666 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T16:03:00.614+05:30  INFO 11666 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T16:03:00.886+05:30  INFO 11666 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T16:03:00.917+05:30  INFO 11666 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T16:03:01.245+05:30  INFO 11666 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@490d9c41
+2025-10-28T16:03:01.246+05:30  INFO 11666 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T16:03:01.275+05:30  WARN 11666 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T16:03:01.296+05:30  INFO 11666 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T16:03:02.213+05:30  INFO 11666 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T16:03:02.288+05:30  INFO 11666 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T16:03:02.570+05:30  INFO 11666 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T16:03:03.244+05:30  WARN 11666 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T16:03:03.622+05:30  INFO 11666 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-28T16:03:03.652+05:30  WARN 11666 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 449f6813-d983-49c3-ab41-498b418f52f8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-28T16:03:03.660+05:30  INFO 11666 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-28T16:03:03.982+05:30  WARN 11666 --- [EMYMNG] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/abijitht/EMPMNG/Backend/target/classes/data.sql]: INSERT INTO departments (id, code, name, description, created_at, updated_at) VALUES (1, 'ENG', 'Engineering', 'Handles product development', NOW(), NOW()), (2, 'HR', 'Human Resources', 'Responsible for employee relations, hiring, and payroll', NOW(), NOW()), (3, 'MKT', 'Marketing', 'Manages branding, advertising, and customer engagement', NOW(), NOW()), (4, 'PM', 'Product Management', 'Oversees product planning, strategy, and feature delivery', NOW(), NOW()), (5, 'DES', 'Design', 'Focuses on UI/UX and product aesthetics', NOW(), NOW())
+2025-10-28T16:03:03.988+05:30  INFO 11666 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T16:03:04.007+05:30  INFO 11666 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T16:03:04.016+05:30  INFO 11666 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T16:03:04.020+05:30  INFO 11666 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T16:03:04.039+05:30  INFO 11666 --- [EMYMNG] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T16:03:04.054+05:30 ERROR 11666 --- [EMYMNG] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/abijitht/EMPMNG/Backend/target/classes/data.sql]: INSERT INTO departments (id, code, name, description, created_at, updated_at) VALUES (1, 'ENG', 'Engineering', 'Handles product development', NOW(), NOW()), (2, 'HR', 'Human Resources', 'Responsible for employee relations, hiring, and payroll', NOW(), NOW()), (3, 'MKT', 'Marketing', 'Manages branding, advertising, and customer engagement', NOW(), NOW()), (4, 'PM', 'Product Management', 'Oversees product planning, strategy, and feature delivery', NOW(), NOW()), (5, 'DES', 'Design', 'Focuses on UI/UX and product aesthetics', NOW(), NOW())
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at project1.EmymngApplication.main(EmymngApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/home/abijitht/EMPMNG/Backend/target/classes/data.sql]: INSERT INTO departments (id, code, name, description, created_at, updated_at) VALUES (1, 'ENG', 'Engineering', 'Handles product development', NOW(), NOW()), (2, 'HR', 'Human Resources', 'Responsible for employee relations, hiring, and payroll', NOW(), NOW()), (3, 'MKT', 'Marketing', 'Manages branding, advertising, and customer engagement', NOW(), NOW()), (4, 'PM', 'Product Management', 'Oversees product planning, strategy, and feature delivery', NOW(), NOW()), (5, 'DES', 'Design', 'Focuses on UI/UX and product aesthetics', NOW(), NOW())
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 20 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "deleted" of relation "departments" violates not-null constraint
+  Detail: Failing row contains (null, 2025-10-28 16:03:03.97824, 1, null, 2025-10-28 16:03:03.97824, ENG, Engineering, Handles product development).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.2.11.jar:6.2.11]
+	... 30 common frames omitted
+
+2025-10-28T16:09:10.974+05:30  INFO 13771 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 13771 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-28T16:09:10.976+05:30  INFO 13771 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T16:09:12.069+05:30  INFO 13771 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T16:09:12.071+05:30  INFO 13771 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-28T16:09:12.115+05:30  INFO 13771 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T16:09:12.118+05:30  INFO 13771 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T16:09:12.119+05:30  INFO 13771 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 0 JDBC repository interfaces.
+2025-10-28T16:09:12.132+05:30  INFO 13771 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T16:09:12.133+05:30  INFO 13771 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T16:09:12.179+05:30  INFO 13771 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2025-10-28T16:09:12.862+05:30  INFO 13771 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T16:09:12.876+05:30  INFO 13771 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T16:09:12.877+05:30  INFO 13771 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T16:09:12.925+05:30  INFO 13771 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T16:09:12.925+05:30  INFO 13771 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1894 ms
+2025-10-28T16:09:13.213+05:30  INFO 13771 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T16:09:13.269+05:30  INFO 13771 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T16:09:13.306+05:30  INFO 13771 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T16:09:13.619+05:30  INFO 13771 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T16:09:13.659+05:30  INFO 13771 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T16:09:13.979+05:30  INFO 13771 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35260785
+2025-10-28T16:09:13.981+05:30  INFO 13771 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T16:09:14.010+05:30  WARN 13771 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T16:09:14.030+05:30  INFO 13771 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T16:09:15.004+05:30  INFO 13771 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T16:09:15.054+05:30  INFO 13771 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T16:09:15.374+05:30  INFO 13771 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T16:09:15.826+05:30  WARN 13771 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T16:09:16.226+05:30  INFO 13771 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-28T16:09:16.275+05:30  WARN 13771 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 307fb8d6-0b57-4e62-a83f-0af87bca7e55
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-28T16:09:16.289+05:30  INFO 13771 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-28T16:09:16.860+05:30  INFO 13771 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-28T16:09:16.881+05:30  INFO 13771 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 6.288 seconds (process running for 6.792)
+2025-10-28T16:09:17.095+05:30  INFO 13771 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-28T16:09:17.095+05:30  INFO 13771 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-28T16:09:17.096+05:30  INFO 13771 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-28T16:09:23.376+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:09:23.376+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:09:23.392+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:09:23.642+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:09:23.643+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:09:23.668+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:13:25.463+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:13:25.464+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:13:25.465+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:13:25.474+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:13:25.476+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:13:25.481+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:16:24.621+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:16:24.621+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:16:24.625+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:16:24.625+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:16:24.628+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:16:24.630+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:22:38.227+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:22:38.227+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:22:38.227+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:22:38.228+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:22:38.228+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:22:38.228+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:22:53.333+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:22:53.333+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:22:53.333+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:22:53.333+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:22:53.334+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:22:53.334+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:23:02.874+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:23:02.874+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:23:02.875+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:23:02.879+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:23:02.881+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:23:02.880+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:23:29.593+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:23:29.594+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:23:29.600+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:23:29.601+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:23:29.601+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:23:29.603+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:24:02.364+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:24:02.364+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:24:02.365+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:24:02.365+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:24:02.365+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:24:02.366+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:24:47.721+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:24:47.721+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:24:47.722+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:24:47.726+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:24:47.726+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:24:47.727+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:25:08.376+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:25:08.376+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:25:08.376+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:25:08.377+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:25:08.377+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:25:08.378+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:25:48.515+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:25:48.515+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:25:48.516+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:25:48.517+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:25:48.517+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:25:48.519+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:26:34.331+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:26:34.331+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:26:34.332+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:26:34.336+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:26:34.336+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:26:34.337+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:27:07.775+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:27:07.775+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:27:07.776+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:27:07.779+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:27:07.779+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:27:07.781+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:30:08.746+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:30:08.746+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:30:08.746+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:30:08.746+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:30:08.747+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:30:08.747+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:39:47.661+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:39:47.661+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:39:47.662+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:39:47.663+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:39:47.663+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:39:47.664+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:40:53.474+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:40:53.474+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:40:53.475+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:40:53.476+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:40:53.476+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:40:53.477+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:47:16.576+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:47:16.576+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:47:16.577+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:47:16.581+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:47:16.581+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:47:16.582+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:49:08.060+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:49:08.062+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:49:08.062+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:49:08.066+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:49:08.066+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:49:08.069+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:49:11.028+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:49:11.028+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:49:11.029+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:49:11.031+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:49:11.031+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:49:11.032+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:53:49.080+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:53:49.080+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-6] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:53:49.080+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-10] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:53:55.931+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:53:55.932+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:53:55.932+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:53:55.933+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:53:55.933+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:53:55.934+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:53:57.531+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:53:57.531+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:53:57.531+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:53:57.531+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T16:53:57.532+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:53:57.532+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-3] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T16:56:17.382+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-8] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:57:50.664+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-4] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T16:57:50.665+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:00:08.187+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:00:08.213+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-7] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:03:52.640+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-5] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:03:52.656+05:30  INFO 13771 --- [EMYMNG] [http-nio-8080-exec-9] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:04:24.416+05:30  INFO 13771 --- [EMYMNG] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-28T17:04:24.419+05:30  INFO 13771 --- [EMYMNG] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-28T17:04:24.428+05:30  INFO 13771 --- [EMYMNG] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T17:04:24.448+05:30  INFO 13771 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T17:04:24.461+05:30  INFO 13771 --- [EMYMNG] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T17:04:25.962+05:30  INFO 34226 --- [EMYMNG] [main] project1.EmymngApplication               : Starting EmymngApplication using Java 25.0.1 with PID 34226 (/home/abijitht/EMPMNG/Backend/target/classes started by abijitht in /home/abijitht/EMPMNG)
+2025-10-28T17:04:25.965+05:30  INFO 34226 --- [EMYMNG] [main] project1.EmymngApplication               : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T17:04:27.052+05:30  INFO 34226 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T17:04:27.054+05:30  INFO 34226 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-28T17:04:27.110+05:30  INFO 34226 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.DepartmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T17:04:27.112+05:30  INFO 34226 --- [EMYMNG] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface project1.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-28T17:04:27.114+05:30  INFO 34226 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 0 JDBC repository interfaces.
+2025-10-28T17:04:27.124+05:30  INFO 34226 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-28T17:04:27.125+05:30  INFO 34226 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T17:04:27.162+05:30  INFO 34226 --- [EMYMNG] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2025-10-28T17:04:27.820+05:30  INFO 34226 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T17:04:27.834+05:30  INFO 34226 --- [EMYMNG] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T17:04:27.835+05:30  INFO 34226 --- [EMYMNG] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T17:04:27.888+05:30  INFO 34226 --- [EMYMNG] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T17:04:27.889+05:30  INFO 34226 --- [EMYMNG] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1869 ms
+2025-10-28T17:04:28.194+05:30  INFO 34226 --- [EMYMNG] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T17:04:28.252+05:30  INFO 34226 --- [EMYMNG] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T17:04:28.288+05:30  INFO 34226 --- [EMYMNG] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T17:04:28.644+05:30  INFO 34226 --- [EMYMNG] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T17:04:28.680+05:30  INFO 34226 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T17:04:28.975+05:30  INFO 34226 --- [EMYMNG] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3883031d
+2025-10-28T17:04:28.976+05:30  INFO 34226 --- [EMYMNG] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T17:04:29.002+05:30  WARN 34226 --- [EMYMNG] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T17:04:29.019+05:30  INFO 34226 --- [EMYMNG] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T17:04:29.919+05:30  INFO 34226 --- [EMYMNG] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T17:04:29.971+05:30  INFO 34226 --- [EMYMNG] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T17:04:30.271+05:30  INFO 34226 --- [EMYMNG] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T17:04:30.724+05:30  WARN 34226 --- [EMYMNG] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T17:04:31.143+05:30  INFO 34226 --- [EMYMNG] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-28T17:04:31.203+05:30  WARN 34226 --- [EMYMNG] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ca7b8214-38a8-4863-b7a4-5e9dbee221fa
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-28T17:04:31.213+05:30  INFO 34226 --- [EMYMNG] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-28T17:04:31.750+05:30  INFO 34226 --- [EMYMNG] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-28T17:04:31.781+05:30  INFO 34226 --- [EMYMNG] [main] project1.EmymngApplication               : Started EmymngApplication in 6.192 seconds (process running for 6.878)
+2025-10-28T17:04:31.834+05:30  INFO 34226 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-28T17:04:31.834+05:30  INFO 34226 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-28T17:04:31.835+05:30  INFO 34226 --- [EMYMNG] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-28T17:04:42.481+05:30  INFO 34226 --- [EMYMNG] [http-nio-8080-exec-1] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:04:42.481+05:30  INFO 34226 --- [EMYMNG] [http-nio-8080-exec-2] p.controller.DepartmentController        : Fetching all departments
+2025-10-28T17:04:42.825+05:30  INFO 34226 --- [EMYMNG] [http-nio-8080-exec-4] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T17:04:42.826+05:30  INFO 34226 --- [EMYMNG] [http-nio-8080-exec-4] project1.service.EmployeeService         : Fetching all employees
+2025-10-28T17:04:42.907+05:30  INFO 34226 --- [EMYMNG] [http-nio-8080-exec-5] project1.controller.EmployeeController   : Fetching all employees
+2025-10-28T17:04:42.908+05:30  INFO 34226 --- [EMYMNG] [http-nio-8080-exec-5] project1.service.EmployeeService         : Fetching all employees

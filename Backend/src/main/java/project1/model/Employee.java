@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "employees",
@@ -23,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Employee extends BaseEntity {
 
     @NotBlank(message = "Employee number is required")

@@ -1,10 +1,22 @@
+// src/components/departments/DepartmentView.jsx
 import { Building, Plus, Filter, MoreVertical } from "lucide-react";
 import "./DepartmentView.css";
 
-function DepartmentView({ departments, searchQuery }) {
+function DepartmentView({
+  departments = [],
+  employees = [],
+  searchQuery = "",
+}) {
+  // Filter by search
   const filteredDepartments = departments.filter((dept) =>
-    dept.name.toLowerCase().includes(searchQuery.toLowerCase())
+    dept.name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Group employees by department
+  const grouped = filteredDepartments.map((dept) => ({
+    ...dept,
+    employees: employees.filter((emp) => emp.department?.id === dept.id),
+  }));
 
   return (
     <div className="department-view">
@@ -37,7 +49,7 @@ function DepartmentView({ departments, searchQuery }) {
             </tr>
           </thead>
           <tbody>
-            {filteredDepartments.map((dept) => (
+            {grouped.map((dept) => (
               <tr key={dept.id}>
                 <td>
                   <div className="dept-info">
@@ -47,9 +59,11 @@ function DepartmentView({ departments, searchQuery }) {
                     <div className="dept-name">{dept.name}</div>
                   </div>
                 </td>
-                <td>{dept.head}</td>
-                <td>{dept.employees}</td>
-                <td>${dept.budget.toLocaleString()}</td>
+                <td>{dept.head || "—"}</td>
+                <td>{dept.employees.length}</td>
+                <td>
+                  {dept.budget ? `$${dept.budget.toLocaleString()}` : "Not set"}
+                </td>
                 <td className="actions">
                   <button className="details-btn">See Details</button>
                   <button className="more-btn">
@@ -61,7 +75,7 @@ function DepartmentView({ departments, searchQuery }) {
           </tbody>
         </table>
 
-        {filteredDepartments.length === 0 && (
+        {grouped.length === 0 && (
           <div className="empty-state">
             <Building size={48} color="#d1d5db" />
             <p>No departments found</p>

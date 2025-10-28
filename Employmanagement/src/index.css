@@ -1,17 +1,4 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 * {
   margin: 0;
   padding: 0;
@@ -77,15 +64,6 @@ a {
 a:hover {
   color: #535bf2;
 }
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -108,6 +86,42 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.app-container {
+  min-height: 100%;
+  background-color: #f9fafb;
+  display: flex;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.page-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.overlay {
+  position: relative;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+/* Fix z-index stacking */
+.employee-view {
+  position: relative;
+  z-index: 1;
+}
+.filter-container {
+  position: relative;
+  z-index: 100;
 }
 
 @media (prefers-color-scheme: light) {

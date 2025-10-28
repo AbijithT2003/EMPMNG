@@ -10,41 +10,46 @@ function App() {
   const [activeView, setActiveView] = useState("employees");
   const [activeTab, setActiveTab] = useState("employees");
   const [employees, setEmployees] = useState([]);
+  const [departments, setDepartments] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
- const [departments, setDepartments] = useState([]);
+ 
+;
+useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
-  // Fetch employees on mount
-  useEffect(() => {
-    fetchEmployees();
-    fetchDepartments(); // 👈 new
+        // 1️⃣ Load departments first
+        const depData = await apiService.getDepartments();
+        setDepartments(depData);
+
+        // 2️⃣ Then load employees and map them with department info
+        const empData = await apiService.getEmployees();
+        const normalized = empData.map((emp) => {
+          const depId = emp.departmentId || emp.department?.id || emp.department;
+          const department = depData.find((d) => d.id === depId) || null;
+          return { ...emp, department };
+        });
+
+        setEmployees(normalized);
+      } catch (err) {
+        console.error("Failed to load data:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadData();
   }, []);
 
 
 
-  const fetchEmployees = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const data = await apiService.getEmployees();
-      setEmployees(data);
-    } catch (err) {
-      setError(err.message);
-      console.error('Failed to fetch employees:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-  const fetchDepartments = async () => {
-    try {
-      const data = await apiService.getDepartments();
-      setDepartments(data);
-    } catch (err) {
-      console.error("Failed to fetch departments:", err);
-    }
-  };
+  
 
   const handleCreateEmployee = async (employeeData) => {
     try {
