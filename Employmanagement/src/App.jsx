@@ -79,6 +79,7 @@ function App() {
       throw err;
     }
   };
+  
 
   return (
     <div className="app-container">
@@ -121,10 +122,11 @@ function App() {
 
           {!loading && !error && (
             <>
-              {activeView === "employees" ? (
+              {activeView === "employees" && (
                 <EmployeeView
                   employees={employees}
                   departments={departments}
+                  setEmployees={setEmployees}
                   searchQuery={searchQuery}
                   setSearchQuery={setSearchQuery}
                   activeTab={activeTab}
@@ -133,7 +135,9 @@ function App() {
                   onUpdateEmployee={handleUpdateEmployee}
                   onDeleteEmployee={handleDeleteEmployee}
                 />
-              ) : (
+              )}
+
+              {activeView === "departments" && (
                 <DepartmentView
                   departments={departments}
                   employees={employees}

@@ -138,7 +138,36 @@ public class EmployeeService {
     }
     
     private String generateEmployeeNumber() {
-        long count = employeeRepository.count();
-        return String.format("EMP%05d", count + 1);
+    String lastNumber = employeeRepository.findMaxEmployeeNumber(); // custom query
+    int next = 1;
+    if (lastNumber != null && lastNumber.startsWith("EMP")) {
+        next = Integer.parseInt(lastNumber.substring(3)) + 1;
     }
+    return String.format("EMP%05d", next);
 }
+
+    public List<EmployeeDto> filterEmployees(Long departmentId, EmploymentStatus status, ContractType contractType) {
+    List<Employee> employees;
+
+    if (departmentId != null && status != null && contractType != null) {
+        employees = employeeRepository.findByDepartment_IdAndStatusAndContractType(departmentId, status, contractType);
+    } else if (departmentId != null && status != null) {
+        employees = employeeRepository.findByDepartment_IdAndStatus(departmentId, status);
+    } else if (departmentId != null && contractType != null) {
+        employees = employeeRepository.findByDepartment_IdAndContractType(departmentId, contractType);
+    } else if (departmentId != null) {
+        employees = employeeRepository.findByDepartment_Id(departmentId);
+    } else if (status != null && contractType != null) {
+        employees = employeeRepository.findByStatusAndContractType(status, contractType);
+    } else if (status != null) {
+        employees = employeeRepository.findByStatus(status);
+    } else if (contractType != null) {
+        employees = employeeRepository.findByContractType(contractType);
+    } else {
+        employees = employeeRepository.findAll();
+    }
+
+    return employees.stream().map(this::convertToDto).collect(Collectors.toList());
+}
+}
+

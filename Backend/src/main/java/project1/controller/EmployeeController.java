@@ -1,6 +1,8 @@
 package project1.controller;
 
 import project1.dto.*;
+import project1.model.enums.ContractType;
+import project1.model.enums.EmploymentStatus;
 import project1.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -61,4 +63,13 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/filter")
+    public ResponseEntity<List<EmployeeDto>> filterEmployees(
+        @RequestParam(required = false) Long departmentId,
+        @RequestParam(required = false) EmploymentStatus status,
+        @RequestParam(required = false) ContractType contractType) {
+    List<EmployeeDto> filtered = employeeService.filterEmployees(departmentId,status, contractType);
+    return ResponseEntity.ok(filtered);
+}
+
 }

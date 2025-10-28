@@ -1,4 +1,4 @@
-import { Search, Bell, Share2, Menu } from "lucide-react";
+import { Search, Bell,User, Share2, Menu } from "lucide-react";
 import "./Header.css";
 
 function Header({ activeView, setSidebarOpen, searchQuery, setSearchQuery }) {
@@ -15,6 +15,7 @@ function Header({ activeView, setSidebarOpen, searchQuery, setSearchQuery }) {
         </div>
 
         <div className="header-right">
+          {activeView === "departments" && (
           <div className="search-wrapper">
             <Search className="search-icon" size={16} color="#9ca3af" />
             <input
@@ -25,11 +26,9 @@ function Header({ activeView, setSidebarOpen, searchQuery, setSearchQuery }) {
               className="search-input"
             />
           </div>
+        )}
           <button className="icon-btn">
-            <Bell size={18} color="#4b5563" />
-          </button>
-          <button className="icon-btn">
-            <Share2 size={18} color="#4b5563" />
+            <User size={18} color="#4b5563" />
           </button>
         </div>
       </div>

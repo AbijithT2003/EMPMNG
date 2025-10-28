@@ -96,7 +96,10 @@ class ApiService {
   async getDepartmentsWithEmployees() {
     return this.request("/departments/with-employees");
   }
-
+  async filterEmployees(filters) {
+    const params = new URLSearchParams(filters).toString();
+    return this.request(`/filter?${params}`);
+  }
 }
 
 export default new ApiService();

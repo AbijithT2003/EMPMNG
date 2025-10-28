@@ -1,20 +1,13 @@
 import { useState } from "react";
-import {
-  Search,
-  Filter,
-  Users,
-  Calendar,
-  Plus,
-  Edit,
-  Trash2,
-  Building2,
-  GroupIcon,
+import {Search,Filter,Users,Calendar,Plus,Edit,Trash2,Building2,GroupIcon,
 } from "lucide-react";
 import EmployeeForm from "./EmployeeForm";
 import "./EmployeeView.css";
+import api from "../../services/api";
 
 function EmployeeView({
   employees,
+  setEmployees,
   departments=[],
   searchQuery,
   setSearchQuery,
@@ -27,7 +20,12 @@ function EmployeeView({
   const [showForm, setShowForm] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [showActions, setShowActions] = useState(false);
-
+  const [showFilter, setShowFilter] = useState(false);
+  const [filters, setFilters] = useState({
+    status: "",
+    department: "",
+    contractType: "",
+  });
   const toggleActions = () => setShowActions((prev) => !prev);
 
   const filteredEmployees = employees.filter(
@@ -67,9 +65,22 @@ function EmployeeView({
     setShowForm(false);
   };
 
+  const fetchFilteredEmployees = async () => {
+    try {
+      const data = await api.filterEmployees(filters);
+      setEmployees(data);
+      setShowFilter(false);
+    } catch (error) {
+      console.error("Failed to fetch filtered employees:", error);
+      alert("Error applying filters. Check console for details.");
+    }
+  };
+
+
+
   const groupedDepartments = departments.map((dept) => ({
     ...dept,
-    employees: employees.filter((emp) => emp.departmentId === dept.id),
+    employees: employees.filter((emp) => emp.department?.id === dept.id),
   }));
 
   return (
@@ -121,117 +132,177 @@ function EmployeeView({
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <button className="filter-btn">
-          <Filter size={14} />
-          Filter
-        </button>
+        <div className="filter-container">
+          <button
+            className="filter-btn"
+            onClick={() => setShowFilter(!showFilter)}
+          >
+            <Filter size={14} /> Filter
+          </button>
+
+          {showFilter && (
+            <div className="filter-dropdown">
+              <select
+                value={filters.departmentId}
+                onChange={(e) =>
+                  setFilters({ ...filters, departmentId: e.target.value })
+                }
+              >
+                <option value="">All Departments</option>
+                {departments.map((dept) => (
+                  <option key={dept.id} value={dept.id}>
+                    {dept.name}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                value={filters.status}
+                onChange={(e) =>
+                  setFilters({ ...filters, status: e.target.value })
+                }
+              >
+                <option value="">All Statuses</option>
+                <option value="ACTIVE">Active</option>
+                <option value="INACTIVE">Inactive</option>
+                <option value="ON_LEAVE">On Leave</option>
+                <option value="ON_SITE">On Site</option>
+              </select>
+
+              <select
+                value={filters.contractType}
+                onChange={(e) =>
+                  setFilters({ ...filters, contractType: e.target.value })
+                }
+              >
+                <option value="">All Contract Types</option>
+                <option value="FULL_TIME">Full Time</option>
+                <option value="PART_TIME">Part Time</option>
+                <option value="CONTRACT">Contract</option>
+                <option value="INTERN">Intern</option>
+              </select>
+
+              <button className="apply-filter" onClick={fetchFilteredEmployees}>
+                Apply
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Employee Table */}
-      <div className="employee-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Employee Name</th>
-              <th className="hide-md">Email</th>
-              <th>Job Title</th>
-              <th>Department</th>
-              <th>Contract</th>
-              <th>Status</th>
-              <th className="hide-lg">Salary</th>
-              {showActions && <th>Actions</th>}
-            </tr>
-          </thead>
+      {activeTab === "employees" && (
+        <div className="employee-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee Name</th>
+                <th className="hide-md">Email</th>
+                <th>Job Title</th>
+                <th>Department</th>
+                <th>Contract</th>
+                <th>Status</th>
+                <th className="hide-lg">Salary</th>
+                {showActions && <th>Actions</th>}
+              </tr>
+            </thead>
 
-          <tbody>
-            {filteredEmployees.map((emp) => (
-              <tr key={emp.id}>
-                <td>
-                  <div className="emp-info">
-                    <div className="avatar">
-                      {emp.firstName?.charAt(0)}
-                      {emp.lastName?.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="emp-name">
-                        {emp.firstName} {emp.lastName}
+            <tbody>
+              {filteredEmployees.map((emp) => (
+                <tr key={emp.id}>
+                  <td>
+                    <div className="emp-info">
+                      <div className="avatar">
+                        {emp.firstName?.charAt(0)}
+                        {emp.lastName?.charAt(0)}
                       </div>
-                      <div className="emp-id">{emp.employeeNumber}</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="hide-md">{emp.email}</td>
-                <td>{emp.jobTitle}</td>
-                <td>
-                  <div className="dept-cell">
-                    <Building2 size={12} />
-                    {emp.department?.name || "-"}
-                  </div>
-                </td>
-                <td>{emp.contractType || "-"}</td>
-                <td>
-                  <span
-                    className={`status-badge ${
-                      emp.status === "ACTIVE"
-                        ? "active"
-                        : emp.status === "ON_LEAVE"
-                        ? "leave"
-                        : "inactive"
-                    }`}
-                  >
-                    {emp.status}
-                  </span>
-                </td>
-                <td className="hide-lg">
-                  {emp.salary ? `$${emp.salary.toLocaleString()}` : "-"}
-                </td>
-
-                {showActions && (
-                  <td className="actions">
-                    <div className="action-buttons">
-                      <button
-                        className="icon-btn"
-                        onClick={() => handleEdit(emp)}
-                        title="Edit"
-                      >
-                        <Edit size={14} />
-                      </button>
-                      <button
-                        className="icon-btn danger"
-                        onClick={() => handleDelete(emp.id)}
-                        title="Delete"
-                      >
-                        <Trash2 size={14} />
-                      </button>
+                      <div>
+                        <div className="emp-name">
+                          {emp.firstName} {emp.lastName}
+                        </div>
+                        <div className="emp-id">{emp.employeeNumber}</div>
+                      </div>
                     </div>
                   </td>
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <td className="hide-md">{emp.email}</td>
+                  <td>{emp.jobTitle}</td>
+                  <td>
+                    <div className="dept-cell">
+                      <Building2 size={12} />
+                      {emp.department?.name || "-"}
+                    </div>
+                  </td>
+                  <td>{emp.contractType || "-"}</td>
+                  <td>
+                    <span
+                      className={`status-badge ${
+                        emp.status === "ACTIVE"
+                          ? "active"
+                          : emp.status === "ON_LEAVE"
+                          ? "leave"
+                          : "inactive"
+                      }`}
+                    >
+                      {emp.status}
+                    </span>
+                  </td>
+                  <td className="hide-lg">
+                    {emp.salary ? `$${emp.salary.toLocaleString()}` : "-"}
+                  </td>
 
-        {filteredEmployees.length === 0 && (
-          <div className="empty-state">
-            <Users size={48} color="#d1d5db" />
-            <p>No employees found</p>
-          </div>
-        )}
-      </div>
+                  {showActions && (
+                    <td className="actions">
+                      <div className="action-buttons">
+                        <button
+                          className="icon-btn"
+                          onClick={() => handleEdit(emp)}
+                          title="Edit"
+                        >
+                          <Edit size={14} />
+                        </button>
+                        <button
+                          className="icon-btn danger"
+                          onClick={() => handleDelete(emp.id)}
+                          title="Delete"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          {filteredEmployees.length === 0 && (
+            <div className="empty-state">
+              <Users size={48} color="#d1d5db" />
+              <p>No employees found</p>
+            </div>
+          )}
+        </div>
+      )}
       {/* Department Cards View */}
       {activeTab === "departments" && (
         <div className="department-cards-container">
           {groupedDepartments.map((dept) => (
             <div key={dept.id} className="department-card">
               <h4>{dept.name}</h4>
-              <p><strong>Head:</strong> {dept.head || "N/A"}</p>
-              <p><strong>Employees:</strong> {dept.employees.length}</p>
+              <p>
+                <strong>Head:</strong> {dept.head || "N/A"}
+              </p>
+              <p>
+                <strong>Employees:</strong> {dept.employees.length}
+              </p>
 
               <div className="employee-list">
                 {dept.employees.length > 0 ? (
                   dept.employees.map((emp) => (
                     <div key={emp.id} className="employee-item">
-                      <span>{emp.firstName} {emp.lastName}</span>
+                      <span>
+                        {emp.firstName} {emp.lastName}
+                      </span>
                       <span className="emp-title">{emp.jobTitle}</span>
                     </div>
                   ))

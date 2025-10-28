@@ -2,7 +2,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(119, 114, 114, 0.37);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
   max-width: 32rem;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(235, 216, 216, 0.1);
 }
 
 .modal-header {
@@ -31,7 +31,7 @@
 .modal-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #111827;
+  color: #14161b;
   margin: 0;
 }
 
@@ -81,13 +81,14 @@
   border-radius: 0.5rem;
   font-size: 0.875rem;
   transition: all 0.2s;
+  background-color: #263044;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(49, 108, 236, 0.1);
 }
 
 .form-group input.error,
