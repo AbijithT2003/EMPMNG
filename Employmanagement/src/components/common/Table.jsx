@@ -1,28 +1,43 @@
 import "./Table.css";
 
-function Table({ headers = [], rows = [], emptyMessage = "No records found" }) {
+function Table({
+  headers = [],
+  rows = [],
+  emptyMessage = "No records found",
+  loading = false,
+}) {
   return (
     <div className="table-container">
-      <table className="table">
-        <thead>
-          <tr>
-            {headers.map((header, i) => (
-              <th key={i}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.length > 0 ? (
-            rows.map((row, i) => <tr key={i}>{row}</tr>)
-          ) : (
+      <div className="table-wrapper">
+        <table className="table">
+          <thead>
             <tr>
-              <td colSpan={headers.length} className="empty-row">
-                {emptyMessage}
-              </td>
+              {headers.map((header, i) => (
+                <th key={i} className={header.className}>
+                  {header.label}
+                </th>
+              ))}
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {loading ? (
+              <tr>
+                <td colSpan={headers.length} className="table-loading">
+                  Loading...
+                </td>
+              </tr>
+            ) : rows.length > 0 ? (
+              rows.map((row, i) => <tr key={i}>{row}</tr>)
+            ) : (
+              <tr>
+                <td colSpan={headers.length} className="table-empty">
+                  {emptyMessage}
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

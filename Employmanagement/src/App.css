@@ -1,3 +1,81 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.app-content {
+  flex: 1;
+  margin-left: 280px;
+  min-width: 0;
+}
+
+.main-content {
+  padding: 2rem;
+}
+
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  color: #6b7280;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f4f6;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.app-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-error button {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.leave-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    margin-left: 0;
+  }
+}
+
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -11,7 +89,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  height : 100vh;
+  height: 100vh;
 }
 
 .page-content {
@@ -43,4 +121,3 @@
     display: none;
   }
 }
- 

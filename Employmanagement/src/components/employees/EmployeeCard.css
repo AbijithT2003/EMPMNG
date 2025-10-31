@@ -1,0 +1,78 @@
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.employee-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.employee-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.employee-card-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.employee-card-title {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.employee-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.employee-card-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.employee-card-footer {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.employee-card-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  background: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.employee-card-btn:hover {
+  background: #f9fafb;
+}
+
+.employee-card-btn-danger {
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.employee-card-btn-danger:hover {
+  background: #fee2e2;
+}

@@ -1,113 +1,94 @@
-
 .sidebar {
-  width: 16rem;
-  min-height: 100vh;
-  background: white;
-  border-right: 1px solid #e5e7eb;
-  position: static;
+  width: 280px;
+  height: 100vh;
+  background: #1e293b;
+  color: #fff;
+  padding: 1rem;
+  position: fixed;
   left: 0;
-  z-index: 50;
-
-  transform: translateX(0);
-  visibility: visible;
-  transition: transform 0.3s ease-in-out;
+  top: 0;
+  transition: transform 0.3s ease;
 }
+
 .sidebar-header {
-  height: 4rem;
-  border-bottom: 1px solid #e5e7eb;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.sidebar-title {
+.sidebar-brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.logo {
-  width: 2rem;
-  height: 2rem;
-  background: #2563eb;
-  border-radius: 0.5rem;
+.sidebar-logo {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.app-name {
-  font-size: 1rem;
+.sidebar-title {
   font-weight: 600;
-  color: #111827;
+  font-size: 1.25rem;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .sidebar-nav {
-  flex: 1;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.nav-item {
-  width: 100%;
+.sidebar-nav-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  border-radius: 0.5rem;
-  padding: 0.625rem 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
   background: none;
   border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
   text-align: left;
-  cursor: pointer;
-  transition: 0.2s;
+  width: 100%;
 }
 
-.nav-item:hover {
-  background: #f9fafb;
+.sidebar-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
-.nav-item.active {
-  background: #eff6ff;
-  color: #2563eb;
+.sidebar-nav-item.active {
+  background: #2563eb;
+  color: #fff;
 }
 
-.close-btn {
-  background:#03c1f0;
-  border: none;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  display: none; /* hidden on desktop by default */
-}
-
-.close-btn:hover {
-  background: #0c0000;
-}
-
-/* =============================
-   Mobile View (collapsible)
-   ============================= */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .sidebar {
-    position: fixed;
-    height: 100vh;
-    top: 0;
     transform: translateX(-100%);
-    visibility: hidden;
+    z-index: 50;
   }
 
-  .sidebar.open {
+  .sidebar-open {
     transform: translateX(0);
-    visibility: visible;
-  }
-
-  .close-btn {
-    display: block;
   }
 }

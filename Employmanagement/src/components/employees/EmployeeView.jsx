@@ -1,14 +1,25 @@
-import { useState } from "react";
-import {Search,Filter,Users,Calendar,Plus,Edit,Trash2,Building2,GroupIcon,
+import React, { useState } from "react";
+import {
+  Search,
+  Filter,
+  Users,
+  Calendar,
+  Plus,
+  Edit,
+  Trash2,
+  Building2,
+  GroupIcon,
 } from "lucide-react";
 import EmployeeForm from "./EmployeeForm";
+import Button from "../common/Button";
+import EmployeeTable from "./EmployeeTable";
 import "./EmployeeView.css";
 import api from "../../services/api";
 
 function EmployeeView({
   employees,
   setEmployees,
-  departments=[],
+  departments = [],
   searchQuery,
   setSearchQuery,
   activeTab,
@@ -76,16 +87,11 @@ function EmployeeView({
     }
   };
 
-
-
-  const groupedDepartments = departments.map((dept) => ({  
-
-      ...dept,
-      head:dept.manager,
-      employees: employees.filter((emp) => emp.department?.id === dept.id),
-  })
-  );
-
+  const groupedDepartments = departments.map((dept) => ({
+    ...dept,
+    head: dept.manager,
+    employees: employees.filter((emp) => emp.department?.id === dept.id),
+  }));
 
   return (
     <div className="employee-view">
@@ -99,10 +105,9 @@ function EmployeeView({
           <button className="filter-btn" onClick={toggleActions}>
             {showActions ? "Hide Actions" : "Show Actions"}
           </button>
-          <button className="add-btn" onClick={handleAdd}>
-            <Plus size={14} />
+          <Button variant="primary" icon={Plus} onClick={handleAdd}>
             Add Employee
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -198,87 +203,12 @@ function EmployeeView({
       {activeTab === "employees" && (
         <div className="employee-table">
           <div className="employee-table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Employee Name</th>
-                <th className="hide-md">Email</th>
-                <th>Job Title</th>
-                <th>Department</th>
-                <th>Contract</th>
-                <th>Status</th>
-                <th className="hide-lg">Salary</th>
-                {showActions && <th>Actions</th>}
-              </tr>
-            </thead>
-
-            <tbody>
-              {filteredEmployees.map((emp) => (
-                <tr key={emp.id}>
-                  <td>
-                    <div className="emp-info">
-                      <div className="avatar">
-                        {emp.firstName?.charAt(0)}
-                        {emp.lastName?.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="emp-name">
-                          {emp.firstName} {emp.lastName}
-                        </div>
-                        <div className="emp-id">{emp.employeeNumber}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="hide-md">{emp.email}</td>
-                  <td>{emp.jobTitle}</td>
-                  <td>
-                    <div className="dept-cell">
-                      <Building2 size={12} />
-                      {emp.department?.name || "-"}
-                    </div>
-                  </td>
-                  <td>{emp.contractType || "-"}</td>
-                  <td>
-                    <span
-                      className={`status-badge ${
-                        emp.status === "ACTIVE"
-                          ? "active"
-                          : emp.status === "ON_LEAVE"
-                          ? "leave"
-                          : "inactive"
-                      }`}
-                    >
-                      {emp.status}
-                    </span>
-                  </td>
-                  <td className="hide-lg">
-                    {emp.salary ? `$${emp.salary.toLocaleString()}` : "-"}
-                  </td>
-
-                  {showActions && (
-                    <td className="actions">
-                      <div className="action-buttons">
-                        <button
-                          className="icon-btn"
-                          onClick={() => handleEdit(emp)}
-                          title="Edit"
-                        >
-                          <Edit size={14} />
-                        </button>
-                        <button
-                          className="icon-btn danger"
-                          onClick={() => handleDelete(emp.id)}
-                          title="Delete"
-                        >
-                          <Trash2 size={14} />
-                        </button>
-                      </div>
-                    </td>
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            <EmployeeTable
+              employees={filteredEmployees}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+              showActions={showActions}
+            />
           </div>
 
           {filteredEmployees.length === 0 && (
@@ -296,7 +226,10 @@ function EmployeeView({
             <div key={dept.id} className="department-card">
               <h4>{dept.name}</h4>
               <p>
-                <strong>Head:</strong> {dept.head ? `${dept.head.firstName} ${dept.head.lastName}` : "N/A"}
+                <strong>Head:</strong>{" "}
+                {dept.head
+                  ? `${dept.head.firstName} ${dept.head.lastName}`
+                  : "N/A"}
               </p>
               <p>
                 <strong>Employees:</strong> {dept.employees.length}
@@ -327,6 +260,7 @@ function EmployeeView({
           employee={selectedEmployee}
           onSubmit={handleFormSubmit}
           onClose={() => setShowForm(false)}
+          departments={departments}
         />
       )}
     </div>

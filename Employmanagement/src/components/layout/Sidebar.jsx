@@ -1,42 +1,43 @@
-import { Users, Briefcase, X } from "lucide-react";
+import React from "react";
+import { Users, Layout, Calendar, X } from "react-feather";
 import "./Sidebar.css";
 
-function Sidebar({ activeView, setActiveView, sidebarOpen, setSidebarOpen }) {
+const navItems = [
+  { id: "employees", label: "Employees", icon: Users },
+  { id: "departments", label: "Departments", icon: Layout },
+  { id: "leave", label: "Leave Requests", icon: Calendar },
+];
+
+function Sidebar({ activeView, setActiveView, isOpen, onClose }) {
+  const handleNavClick = (id) => {
+    setActiveView(id);
+  };
+
   return (
-    <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+    <aside className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
       <div className="sidebar-header">
-        <div className="sidebar-title">
-          <div className="logo">
-            <Users color="#fff" />
+        <div className="sidebar-brand">
+          <div className="sidebar-logo">
+            <Users color="#fff" size={20} />
           </div>
-          <h1></h1>
+          <span className="sidebar-title">Manager</span>
         </div>
-        <button onClick={() => setSidebarOpen(false)} className="close-btn">
+        <button onClick={onClose} className="sidebar-close">
           <X size={18} />
         </button>
       </div>
 
       <nav className="sidebar-nav">
-        <button
-          className={`nav-item ${activeView === "employees" ? "active" : ""}`}
-          onClick={() => {
-            setActiveView("employees");
-            setSidebarOpen(false);
-          }}
-        >
-          <Users size={16} />
-          Employees
-        </button>
-        <button
-          className={`nav-item ${activeView === "departments" ? "active" : ""}`}
-          onClick={() => {
-            setActiveView("departments");
-            setSidebarOpen(false);
-          }}
-        >
-          <Briefcase size={16} />
-          Departments
-        </button>
+        {navItems.map(({ id, label, icon: NavIcon }) => (
+          <button
+            key={id}
+            className={`sidebar-nav-item ${activeView === id ? "active" : ""}`}
+            onClick={() => handleNavClick(id)}
+          >
+            <NavIcon size={16} />
+            <span>{label}</span>
+          </button>
+        ))}
       </nav>
     </aside>
   );

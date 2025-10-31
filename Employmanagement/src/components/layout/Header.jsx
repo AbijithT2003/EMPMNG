@@ -1,35 +1,32 @@
-import { Search, Bell,User, Share2, Menu } from "lucide-react";
+import React from "react";
+import { Search, Bell, Settings } from "react-feather";
 import "./Header.css";
 
-function Header({ activeView, setSidebarOpen, searchQuery, setSearchQuery }) {
+function Header({ searchQuery, setSearchQuery, onOpenSidebar }) {
   return (
     <header className="header">
-      <div className="header-inner">
-        <div className="header-left">
-          <button className="menu-btn" onClick={() => setSidebarOpen(true)}>
-            <Menu size={20} color="#4b5563" />
-          </button>
-          <h2 className="header-title">
-            {activeView === "employees" ? "Employee Management" : "Departments"}
-          </h2>
+      <div className="header-left">
+        <div className="search-container">
+          <Search size={18} className="search-icon" />
+          <input
+            type="text"
+            placeholder="Hint search text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
         </div>
-
-        <div className="header-right">
-          {activeView === "departments" && (
-          <div className="search-wrapper">
-            <Search className="search-icon" size={16} color="#9ca3af" />
-            <input
-              type="text"
-              placeholder="Search keyword..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input"
-            />
-          </div>
-        )}
-          <button className="icon-btn">
-            <User size={18} color="#4b5563" />
-          </button>
+      </div>
+      <div className="header-right">
+        <button className="icon-button">
+          <Bell size={18} />
+        </button>
+        <button className="icon-button">
+          <Settings size={18} />
+        </button>
+        <div className="admin-profile">
+          <span className="admin-label">ADMIN</span>
+          <div className="admin-avatar" />
         </div>
       </div>
     </header>

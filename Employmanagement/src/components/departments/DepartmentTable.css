@@ -1,0 +1,44 @@
+.dept-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dept-icon-wrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dept-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.dept-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dept-more-btn {
+  background: none;
+  border: none;
+  padding: 0.375rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.dept-more-btn:hover {
+  background: #f3f4f6;
+}

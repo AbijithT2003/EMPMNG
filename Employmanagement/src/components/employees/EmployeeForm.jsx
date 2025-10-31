@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { X } from "react-feather";
 import "./EmployeeForm.css";
 
-function EmployeeForm({ employee, onSubmit, onClose }) {
+function EmployeeForm({ employee, onSubmit, onClose, departments }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,7 +42,7 @@ function EmployeeForm({ employee, onSubmit, onClose }) {
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Email is invalid";
-    if (!formData.jobTitle.trim()) newErrors.jobTitle = "Job title is required"
+    if (!formData.jobTitle.trim()) newErrors.jobTitle = "Job title is required";
     if (!formData.departmentId) newErrors.departmentId = "Select a department";
     if (formData.salary && isNaN(formData.salary))
       newErrors.salary = "Salary must be a number";
@@ -173,11 +173,11 @@ function EmployeeForm({ employee, onSubmit, onClose }) {
                 onChange={handleChange}
               >
                 <option value="">Select Department</option>
-                <option value="1">Engineering</option>
-                <option value="2">Human Resource</option>
-                <option value="3">Marketing</option>
-                <option value="4">Product Management</option>
-                <option value="5">Design</option>
+                {departments.map((dept) => (
+                  <option key={dept.id} value={dept.id}>
+                    {dept.name}
+                  </option>
+                ))}
               </select>
               {errors.departmentId && (
                 <span className="error-text">{errors.departmentId}</span>
@@ -228,11 +228,7 @@ function EmployeeForm({ employee, onSubmit, onClose }) {
             >
               Cancel
             </button>
-            <button
-              type="submit"
-              className="btn primary"
-              disabled={loading}
-            >
+            <button type="submit" className="btn primary" disabled={loading}>
               {loading ? "Saving..." : employee ? "Update" : "Create"}
             </button>
           </div>
