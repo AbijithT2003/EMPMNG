@@ -78,10 +78,14 @@ function EmployeeView({
 
 
 
-  const groupedDepartments = departments.map((dept) => ({
-    ...dept,
-    employees: employees.filter((emp) => emp.department?.id === dept.id),
-  }));
+  const groupedDepartments = departments.map((dept) => ({  
+
+      ...dept,
+      head:dept.manager,
+      employees: employees.filter((emp) => emp.department?.id === dept.id),
+  })
+  );
+
 
   return (
     <div className="employee-view">
@@ -292,7 +296,7 @@ function EmployeeView({
             <div key={dept.id} className="department-card">
               <h4>{dept.name}</h4>
               <p>
-                <strong>Head:</strong> {dept.head || "N/A"}
+                <strong>Head:</strong> {dept.head ? `${dept.head.firstName} ${dept.head.lastName}` : "N/A"}
               </p>
               <p>
                 <strong>Employees:</strong> {dept.employees.length}

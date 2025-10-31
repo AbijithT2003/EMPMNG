@@ -86,7 +86,8 @@ public class EmployeeService {
         existing.setLastName(updatedDto.getLastName());
         existing.setEmail(updatedDto.getEmail());
         existing.setJobTitle(updatedDto.getJobTitle());
-        existing.setSalary(updatedDto.getSalary());  // Fixed: Added salary update
+        existing.setSalary(updatedDto.getSalary()); 
+        existing.setJoinDate(updatedDto.getJoinDate()); 
         existing.setStatus(updatedDto.getStatus());
         existing.setContractType(updatedDto.getContractType());
         
@@ -125,12 +126,13 @@ public class EmployeeService {
                 .lastName(employee.getLastName())
                 .email(employee.getEmail())
                 .jobTitle(employee.getJobTitle())
-                .salary(employee.getSalary()) 
+                .salary(employee.getSalary())            
+                .joinDate(employee.getJoinDate()) // ✅ include this
                 .status(employee.getStatus())
                 .contractType(employee.getContractType())
                 .department(employee.getDepartment() != null
                         ? DepartmentDto.builder()
-                            .departmentid(employee.getDepartment().getId())
+                            .id(employee.getDepartment().getId())
                             .name(employee.getDepartment().getName())
                             .build()
                         : null) // Fixed: Added salary to DTO conversion

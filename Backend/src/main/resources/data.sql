@@ -91,3 +91,6 @@ INSERT INTO employees (
 (12, 'EMP012', 'Lucas', 'Brown', 'lucas.brown@company.com',
  '2022-05-30', 'INACTIVE', 'PART_TIME', 'Associate Product Manager', 50000,
  4, 11, FALSE, NOW(), NOW());
+
+-- Reset employee ID sequence to the next available value
+SELECT setval('employees_id_seq', (SELECT MAX(id) FROM employees) + 1);

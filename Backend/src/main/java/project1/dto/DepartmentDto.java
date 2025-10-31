@@ -8,6 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class DepartmentDto {
-    private Long departmentid;
+    private Long id;
     private String name;
 }

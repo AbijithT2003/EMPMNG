@@ -35,7 +35,7 @@
 .employee-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .add-btn,
@@ -297,7 +297,7 @@
 /* ---------- Action Buttons ---------- */
 .action-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
 }
 

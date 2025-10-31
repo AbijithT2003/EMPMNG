@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Sidebar from "./components/layout/Sidebar";
+//import Sidebar from "./components/layout/Sidebar";
 import Header from "./components/layout/Header";
 import EmployeeView from "./components/employees/EmployeeView";
 import DepartmentView from "./components/departments/DepartmentView";
@@ -12,7 +12,7 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [departments, setDepartments] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  //const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
  
@@ -23,11 +23,11 @@ useEffect(() => {
         setLoading(true);
         setError(null);
 
-        // 1️⃣ Load departments first
+        // Load departments first
         const depData = await apiService.getDepartments();
         setDepartments(depData);
 
-        // 2️⃣ Then load employees and map them with department info
+        // Then load employees and map them with department info
         const empData = await apiService.getEmployees();
         const normalized = empData.map((emp) => {
           const depId = emp.departmentId || emp.department?.id || emp.department;
@@ -88,24 +88,12 @@ useEffect(() => {
 
   return (
     <div className="app-container">
-      <Sidebar
-        activeView={activeView}
-        setActiveView={setActiveView}
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
-      />
-      {sidebarOpen && (
-        <div className="overlay" onClick={() => setSidebarOpen(false)} />
-      )}
-
       <div className="main-content">
         <Header
           activeView={activeView}
-          setSidebarOpen={setSidebarOpen}
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
         />
-
         <main className="page-content">
           {loading && (
             <div style={{ padding: "2rem", textAlign: "center" }}>

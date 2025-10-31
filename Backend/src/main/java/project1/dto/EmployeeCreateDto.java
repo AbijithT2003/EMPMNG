@@ -1,6 +1,8 @@
 // EmployeeCreateDto.java
 package project1.dto;
 
+import java.time.LocalDate;
+
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,8 +22,9 @@ public class EmployeeCreateDto {
     @NotBlank private String lastName;
     @Email private String email;
     private String jobTitle;
-    private Double salary; // add field
-     private EmploymentStatus status;      // changed from lowercase 'string'
-    private ContractType contractType;   // keep as enum to match entity/service
-    private Long departmentId;// add getter
+    private Double salary; 
+    private LocalDate joinDate;
+     private EmploymentStatus status;      
+    private ContractType contractType;   
+    private Long departmentId;
 }

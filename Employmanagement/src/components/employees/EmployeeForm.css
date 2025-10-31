@@ -71,7 +71,7 @@
 .form-group label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+  color: #0e1218;
 }
 
 .form-group input,
@@ -81,7 +81,7 @@
   border-radius: 0.5rem;
   font-size: 0.875rem;
   transition: all 0.2s;
-  background-color: #263044;
+  background-color: #74a5f0;
 }
 
 .form-group input:focus,

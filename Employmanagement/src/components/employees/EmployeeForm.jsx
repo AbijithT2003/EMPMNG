@@ -9,7 +9,7 @@ function EmployeeForm({ employee, onSubmit, onClose }) {
     email: "",
     jobTitle: "",
     salary: "",
-    joinDate: "setoday()",
+    joinDate: "",
     departmentId: "",
     contractType: "FULL_TIME",
     status: "ACTIVE",
