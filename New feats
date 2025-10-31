@@ -1,0 +1,251 @@
+Leave/Time-Off Management System 
+
+
+@Entity
+@Table(name = "time_off_requests")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class TimeOffRequest extends BaseEntity {
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employee;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private LeaveType leaveType; // VACATION, SICK, PERSONAL, UNPAID
+    
+    @Column(nullable = false)
+    private LocalDate startDate;
+    
+    @Column(nullable = false)
+    private LocalDate endDate;
+    
+    @Column(nullable = false)
+    private Integer daysRequested;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RequestStatus status; // PENDING, APPROVED, REJECTED, CANCELLED
+    
+    @Column(length = 500)
+    private String reason;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "approved_by")
+    private Employee approvedBy;
+    
+    private LocalDateTime approvedAt;
+    
+    @Column(length = 500)
+    private String approverComments;
+}
+
+@RestController
+@RequestMapping("/api/time-off")
+public class TimeOffController {
+    
+    @PostMapping("/request")
+    public ResponseEntity<TimeOffRequest> createRequest(
+            @Valid @RequestBody TimeOffRequestDto dto) {
+        TimeOffRequest request = timeOffService.createRequest(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(request);
+    }
+    
+    @GetMapping("/employee/{employeeId}")
+    public ResponseEntity<List<TimeOffRequest>> getEmployeeRequests(
+            @PathVariable Long employeeId) {
+        List<TimeOffRequest> requests = timeOffService.getEmployeeRequests(employeeId);
+        return ResponseEntity.ok(requests);
+    }
+    
+    @PutMapping("/{requestId}/approve")
+    public ResponseEntity<TimeOffRequest> approveRequest(
+            @PathVariable Long requestId,
+            @RequestParam Long approverId,
+            @RequestBody(required = false) String comments) {
+        TimeOffRequest approved = timeOffService.approveRequest(requestId, approverId, comments);
+        return ResponseEntity.ok(approved);
+    }
+    
+    @PutMapping("/{requestId}/reject")
+    public ResponseEntity<TimeOffRequest> rejectRequest(
+            @PathVariable Long requestId,
+            @RequestParam Long approverId,
+            @RequestBody String reason) {
+        TimeOffRequest rejected = timeOffService.rejectRequest(requestId, approverId, reason);
+        return ResponseEntity.ok(rejected);
+    }
+    
+    @GetMapping("/balance/{employeeId}")
+    public ResponseEntity<LeaveBalanceDto> getLeaveBalance(
+            @PathVariable Long employeeId) {
+        LeaveBalanceDto balance = timeOffService.calculateLeaveBalance(employeeId);
+        return ResponseEntity.ok(balance);
+    }
+}
+
+
+
+
+
+
+
+Notifications & Alerts System
+
+@Entity
+@Table(name = "notifications")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Notification extends BaseEntity {
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "recipient_id", nullable = false)
+    private Employee recipient;
+    
+    @Column(nullable = false)
+    private String title;
+    
+    @Column(length = 1000, nullable = false)
+    private String message;
+    
+    @Enumerated(EnumType.STRING)
+    private NotificationType type; 
+    // INFO, WARNING, SUCCESS, TIME_OFF_APPROVED, REVIEW_DUE, DOCUMENT_EXPIRING
+    
+    @Column(nullable = false)
+    private Boolean isRead = false;
+    
+    private LocalDateTime readAt;
+    
+    private String actionUrl; // Link to relevant page
+    
+    @Enumerated(EnumType.STRING)
+    private Priority priority; // LOW, MEDIUM, HIGH, URGENT
+}
+
+@RestController
+@RequestMapping("/api/notifications")
+public class NotificationController {
+    
+    @GetMapping("/my-notifications")
+    public ResponseEntity<List<Notification>> getMyNotifications(
+            @AuthenticationPrincipal UserDetails user,
+            @RequestParam(defaultValue = "false") boolean unreadOnly) {
+        List<Notification> notifications = notificationService.getUserNotifications(
+            user.getUsername(), unreadOnly);
+        return ResponseEntity.ok(notifications);
+    }
+    
+    @PutMapping("/{notificationId}/read")
+    public ResponseEntity<Notification> markAsRead(@PathVariable Long notificationId) {
+        Notification notification = notificationService.markAsRead(notificationId);
+        return ResponseEntity.ok(notification);
+    }
+    
+    @PutMapping("/mark-all-read")
+    public ResponseEntity<Void> markAllAsRead(@AuthenticationPrincipal UserDetails user) {
+        notificationService.markAllAsRead(user.getUsername());
+        return ResponseEntity.ok().build();
+    }
+    
+    @GetMapping("/unread-count")
+    public ResponseEntity<Integer> getUnreadCount(@AuthenticationPrincipal UserDetails user) {
+        Integer count = notificationService.getUnreadCount(user.getUsername());
+        return ResponseEntity.ok(count);
+    }
+}
+
+Document Management
+
+@Entity
+@Table(name = "employee_documents")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class EmployeeDocument extends BaseEntity {
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employee;
+    
+    @Column(nullable = false)
+    private String documentName;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private DocumentType documentType; 
+    // RESUME, CONTRACT, ID_PROOF, ADDRESS_PROOF, CERTIFICATE, TAX_DOCUMENT, OFFER_LETTER
+    
+    @Column(nullable = false)
+    private String filePath;
+    
+    private String fileUrl;
+    
+    @Column(nullable = false)
+    private String fileType; // PDF, DOC, IMAGE
+    
+    private Long fileSize; // in bytes
+    
+    private LocalDate expiryDate; // for documents that expire
+    
+    @Column(length = 500)
+    private String description;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "uploaded_by")
+    private Employee uploadedBy;
+    
+    private Boolean isConfidential = false;
+}
+
+@RestController
+@RequestMapping("/api/documents")
+public class DocumentController {
+    
+    @PostMapping("/upload")
+    public ResponseEntity<EmployeeDocument> uploadDocument(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam Long employeeId,
+            @RequestParam DocumentType documentType,
+            @RequestParam(required = false) String description) throws IOException {
+        EmployeeDocument document = documentService.uploadDocument(
+            file, employeeId, documentType, description);
+        return ResponseEntity.status(HttpStatus.CREATED).body(document);
+    }
+    
+    @GetMapping("/employee/{employeeId}")
+    public ResponseEntity<List<EmployeeDocument>> getEmployeeDocuments(
+            @PathVariable Long employeeId) {
+        List<EmployeeDocument> documents = documentService.getEmployeeDocuments(employeeId);
+        return ResponseEntity.ok(documents);
+    }
+    
+    @GetMapping("/{documentId}/download")
+    public ResponseEntity<Resource> downloadDocument(@PathVariable Long documentId) {
+        Resource resource = documentService.getDocumentResource(documentId);
+        return ResponseEntity.ok()
+            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+            .body(resource);
+    }
+    
+    @DeleteMapping("/{documentId}")
+    public ResponseEntity<Void> deleteDocument(@PathVariable Long documentId) {
+        documentService.deleteDocument(documentId);
+        return ResponseEntity.noContent().build();
+    }
+    
+    @GetMapping("/expiring")
+    public ResponseEntity<List<EmployeeDocument>> getExpiringDocuments(
+            @RequestParam(defaultValue = "30") int daysThreshold) {
+        List<EmployeeDocument> expiring = documentService.getExpiringDocuments(daysThreshold);
+        return ResponseEntity.ok(expiring);
+    }
+} 
+
+
