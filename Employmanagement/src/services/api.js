@@ -100,6 +100,33 @@ class ApiService {
     const params = new URLSearchParams(filters).toString();
     return this.request(`/filter?${params}`);
   }
+
+  // Employmanagement/src/services/api.js
+
+  // Add these methods to your ApiService class:
+
+  async getLeaveRequests(filters = {}) {
+    const params = new URLSearchParams(filters).toString();
+    return this.request(`/time-off?${params}`);
+  }
+
+  async approveLeaveRequest(id, comments = "") {
+    return this.request(`/time-off/${id}/approve`, {
+      method: "PUT",
+      body: JSON.stringify({ comments }),
+    });
+  }
+
+  async rejectLeaveRequest(id, comments = "") {
+    return this.request(`/time-off/${id}/reject`, {
+      method: "PUT",
+      body: JSON.stringify({ comments }),
+    });
+  }
+
+  async getLeaveBalance(employeeId) {
+    return this.request(`/time-off/balance/${employeeId}`);
+  }
 }
 
 export default new ApiService();

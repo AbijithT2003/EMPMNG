@@ -5,13 +5,13 @@
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #f7fafc, #edf2f7);
+  background: #f9fafb;
 }
 
 /* Header */
 .app-header {
   background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -34,17 +34,14 @@
 }
 
 .logo svg {
-  stroke: #667eea;
+  stroke: #2563eb;
 }
 
 .logo h1 {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2563eb;
 }
 
 /* Navigation */
@@ -60,7 +57,7 @@
   padding: 0.75rem 1.5rem;
   border: none;
   background: transparent;
-  color: #718096;
+  color: #4b5563;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -70,18 +67,17 @@
 }
 
 .nav-tab:hover {
-  background: #f7fafc;
-  color: #667eea;
+  background: #f3f4f6;
+  color: #2563eb;
 }
 
 .nav-tab-active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #2563eb;
   color: white;
 }
 
 .nav-tab-active:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #2563eb;
 }
 
 /* Main Content */
@@ -107,8 +103,8 @@
 .spinner {
   width: 48px;
   height: 48px;
-  border: 4px solid #e2e8f0;
-  border-top-color: #667eea;
+  border: 4px solid #e5e7eb;
+  border-top-color: #2563eb;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -120,7 +116,7 @@
 }
 
 .loading-container p {
-  color: #718096;
+  color: #6b7280;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -132,10 +128,11 @@
   right: 2rem;
   padding: 1rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   font-weight: 600;
   animation: slideInRight 0.3s ease;
   z-index: 1001;
+  color: white;
 }
 
 @keyframes slideInRight {
@@ -150,13 +147,11 @@
 }
 
 .notification-success {
-  background: linear-gradient(135deg, #48bb78 0%, #2f855a 100%);
-  color: white;
+  background: #10b981;
 }
 
 .notification-error {
-  background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
-  color: white;
+  background: #ef4444;
 }
 
 /* Employees Page */
@@ -169,19 +164,15 @@
 }
 
 .page-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #1a202c;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
   margin: 0 0 0.5rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .page-subtitle {
   font-size: 1.125rem;
-  color: #718096;
+  color: #6b7280;
   margin: 0;
 }
 
@@ -194,12 +185,12 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #2563eb;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 2rem;
   margin: 0 auto 1.5rem;
 }
@@ -207,7 +198,7 @@
 .employee-details-name {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #1f2937;
   margin: 0 0 2rem 0;
 }
 
@@ -224,13 +215,14 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
-  background: #f7fafc;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
 }
 
 .detail-label {
   font-size: 0.875rem;
-  color: #718096;
+  color: #6b7280;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -238,7 +230,7 @@
 
 .detail-value {
   font-size: 1.125rem;
-  color: #1a202c;
+  color: #111827;
   font-weight: 600;
 }
 
@@ -247,7 +239,21 @@
   gap: 1rem;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.employee-details-actions button {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.employee-details-actions button:hover {
+  background: #1d4ed8;
 }
 
 /* Mobile Responsive */
@@ -276,7 +282,7 @@
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .notification {
@@ -296,15 +302,15 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   .app {
-    background: linear-gradient(to bottom right, #1a202c, #2d3748);
+    background: #1f2937;
   }
 
   .app-header {
     background: #2d3748;
   }
 
-  .logo svg {
-    stroke: #667eea;
+  .logo h1 {
+    color: #93c5fd;
   }
 
   .nav-tab {
@@ -312,21 +318,21 @@
   }
 
   .nav-tab:hover {
-    background: #1a202c;
-    color: #667eea;
+    background: #374151;
+    color: #93c5fd;
   }
 
   .loading-container p {
-    color: #a0aec0;
+    color: #cbd5e1;
   }
 
   .spinner {
-    border-color: #4a5568;
-    border-top-color: #667eea;
+    border-color: #4b5563;
+    border-top-color: #93c5fd;
   }
 
   .page-title {
-    color: #f7fafc;
+    color: #f9fafb;
   }
 
   .page-subtitle {
@@ -334,22 +340,23 @@
   }
 
   .employee-details-name {
-    color: #f7fafc;
+    color: #f9fafb;
   }
 
   .employee-detail-item {
-    background: #1a202c;
-  }
-
-  .detail-value {
-    color: #f7fafc;
+    background: #2d3748;
+    border-color: #4b5563;
   }
 
   .detail-label {
-    color: #a0aec0;
+    color: #cbd5e1;
+  }
+
+  .detail-value {
+    color: #f9fafb;
   }
 
   .employee-details-actions {
-    border-top-color: #4a5568;
+    border-top-color: #4b5563;
   }
 }

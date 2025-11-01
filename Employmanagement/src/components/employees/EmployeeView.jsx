@@ -1,44 +1,33 @@
+// Employmanagement/src/components/employees/EmployeeView.jsx
 import React, { useState } from "react";
-import {
-  Search,
-  Filter,
-  Users,
-  Calendar,
-  Plus,
-  Edit,
-  Trash2,
-  Building2,
-  GroupIcon,
-} from "lucide-react";
+import { Search, Filter, Users, Plus, GroupIcon } from "lucide-react";
 import EmployeeForm from "./EmployeeForm";
-import Button from "../common/Button";
 import EmployeeTable from "./EmployeeTable";
-import "./EmployeeView.css";
+import Button from "../common/Button";
 import api from "../../services/api";
+import "./EmployeeView.css";
 
-function EmployeeView({
+export default function EmployeeView({
   employees,
   setEmployees,
   departments = [],
   searchQuery,
   setSearchQuery,
-  activeTab,
-  setActiveTab,
   onCreateEmployee,
   onUpdateEmployee,
   onDeleteEmployee,
 }) {
   const [showForm, setShowForm] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const [showActions, setShowActions] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
   const [filters, setFilters] = useState({
     status: "",
     departmentId: "",
     contractType: "",
   });
-  const toggleActions = () => setShowActions((prev) => !prev);
+  const [activeTab, setActiveTab] = useState("employee-view");
 
+  // ---- Filtering Logic ----
   const filteredEmployees = employees.filter(
     (emp) =>
       emp.firstName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -93,18 +82,16 @@ function EmployeeView({
     employees: employees.filter((emp) => emp.department?.id === dept.id),
   }));
 
+  // ---- JSX UI ----
   return (
-    <div className="employee-view">
+    <div className="employee-view-card">
       {/* Header */}
-      <div className="employee-header">
-        <div>
+      <div className="employee-view-header">
+        <div className="header-left">
           <h3>Employees</h3>
           <p>Manage your employee records efficiently</p>
         </div>
-        <div className="employee-actions">
-          <button className="filter-btn" onClick={toggleActions}>
-            {showActions ? "Hide Actions" : "Show Actions"}
-          </button>
+        <div className="header-actions">
           <Button variant="primary" icon={Plus} onClick={handleAdd}>
             Add Employee
           </Button>
@@ -112,115 +99,107 @@ function EmployeeView({
       </div>
 
       {/* Tabs */}
-      <div className="tabs">
+      <div className="employee-view-tabs">
         <button
-          className={`tab-btn ${activeTab === "employees" ? "active" : ""}`}
-          onClick={() => setActiveTab("employees")}
+          className={`tab ${activeTab === "employee-view" ? "active" : ""}`}
+          onClick={() => setActiveTab("employee-view")}
         >
-          <Users size={14} />
-          Manage Employees
+          <Users size={16} /> Employee Database
         </button>
-        {/*show employess in department cards*/}
         <button
-          className={`tab-btn ${activeTab === "departments" ? "active" : ""}`}
-          onClick={() => setActiveTab("departments")}
+          className={`tab ${activeTab === "departments-view" ? "active" : ""}`}
+          onClick={() => setActiveTab("departments-view")}
         >
-          <GroupIcon size={14} />
-          Departments View
+          <GroupIcon size={16} /> Departments View
         </button>
       </div>
 
-      {/* Search and Filter */}
-      <div className="search-filter">
-        <div className="search-field">
-          <Search className="search-icon" size={14} color="#9ca3af" />
+      {/* Search + Filter */}
+      <div className="employee-view-actions">
+        <div className="search-wrapper">
+          <Search className="search-icon" size={16} />
           <input
             type="text"
-            placeholder="Search employees by name,job, department..."
+            placeholder="Search employees by name/role, departments..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
           />
         </div>
-        <div className="filter-container">
-          <button
-            className="filter-btn"
-            onClick={() => setShowFilter(!showFilter)}
-          >
-            <Filter size={14} /> Filter
-          </button>
 
-          {showFilter && (
-            <div className="filter-dropdown">
-              <select
-                value={filters.departmentId}
-                onChange={(e) =>
-                  setFilters({ ...filters, departmentId: e.target.value })
-                }
-              >
-                <option value="">All Departments</option>
-                {departments.map((dept) => (
-                  <option key={dept.id} value={dept.id}>
-                    {dept.name}
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={filters.status}
-                onChange={(e) =>
-                  setFilters({ ...filters, status: e.target.value })
-                }
-              >
-                <option value="">All Statuses</option>
-                <option value="ACTIVE">Active</option>
-                <option value="INACTIVE">Inactive</option>
-                <option value="ON_LEAVE">On Leave</option>
-                <option value="ON_SITE">On Site</option>
-              </select>
-
-              <select
-                value={filters.contractType}
-                onChange={(e) =>
-                  setFilters({ ...filters, contractType: e.target.value })
-                }
-              >
-                <option value="">All Contract Types</option>
-                <option value="FULL_TIME">Full Time</option>
-                <option value="PART_TIME">Part Time</option>
-                <option value="CONTRACT">Contract</option>
-                <option value="INTERN">Intern</option>
-              </select>
-
-              <button className="apply-filter" onClick={fetchFilteredEmployees}>
-                Apply
-              </button>
-            </div>
-          )}
-        </div>
+        <button
+          className="filter-btn"
+          onClick={() => setShowFilter(!showFilter)}
+        >
+          <Filter size={16} />
+          Filter
+        </button>
       </div>
 
-      {/* Employee Table */}
-      {activeTab === "employees" && (
-        <div className="employee-table">
-          <div className="employee-table-wrapper">
-            <EmployeeTable
-              employees={filteredEmployees}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-              showActions={showActions}
-            />
-          </div>
+      {/* Filter Dropdown */}
+      {showFilter && (
+        <div className="filter-dropdown">
+          <select
+            value={filters.departmentId}
+            onChange={(e) =>
+              setFilters({ ...filters, departmentId: e.target.value })
+            }
+          >
+            <option value="">All Departments</option>
+            {departments.map((dept) => (
+              <option key={dept.id} value={dept.id}>
+                {dept.name}
+              </option>
+            ))}
+          </select>
+
+          <select
+            value={filters.status}
+            onChange={(e) => setFilters({ ...filters, status: e.target.value })}
+          >
+            <option value="">All Statuses</option>
+            <option value="ACTIVE">Active</option>
+            <option value="INACTIVE">Inactive</option>
+            <option value="ON_LEAVE">On Leave</option>
+            <option value="ON_SITE">On Site</option>
+          </select>
+
+          <select
+            value={filters.contractType}
+            onChange={(e) =>
+              setFilters({ ...filters, contractType: e.target.value })
+            }
+          >
+            <option value="">All Contract Types</option>
+            <option value="FULL_TIME">Full Time</option>
+            <option value="PART_TIME">Part Time</option>
+            <option value="CONTRACT">Contract</option>
+            <option value="INTERN">Intern</option>
+          </select>
+
+          <button className="apply-filter" onClick={fetchFilteredEmployees}>
+            Apply
+          </button>
+        </div>
+      )}
+
+      {/* Table View */}
+      {activeTab === "employee-view" && (
+        <div className="employee-table-wrapper">
+          <EmployeeTable
+            employees={filteredEmployees}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
 
           {filteredEmployees.length === 0 && (
-            <div className="empty-state">
-              <Users size={48} color="#d1d5db" />
-              <p>No employees found</p>
-            </div>
+            <div className="empty-state">No employees found</div>
           )}
         </div>
       )}
-      {/* Department Cards View */}
-      {activeTab === "departments" && (
+
+      {/* Department Cards */}
+      {activeTab === "departments-view" && (
         <div className="department-cards-container">
           {groupedDepartments.map((dept) => (
             <div key={dept.id} className="department-card">
@@ -254,7 +233,7 @@ function EmployeeView({
         </div>
       )}
 
-      {/* Employee Form Modal */}
+      {/* Modal Form */}
       {showForm && (
         <EmployeeForm
           employee={selectedEmployee}
@@ -266,5 +245,3 @@ function EmployeeView({
     </div>
   );
 }
-
-export default EmployeeView;

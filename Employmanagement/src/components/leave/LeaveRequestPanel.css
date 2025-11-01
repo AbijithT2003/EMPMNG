@@ -1,0 +1,45 @@
+/* Employmanagement/src/components/leave/LeaveRequestPanel.css */
+.leave-request-panel {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.leave-panel-header {
+  background-color: #374151;
+  padding: 1rem 1.25rem;
+}
+
+.leave-panel-header h3 {
+  color: #60a5fa;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.leave-request-list {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.leave-request-item {
+  background-color: #e5e7eb;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.leave-request-item:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+}

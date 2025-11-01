@@ -1,123 +1,62 @@
+/* Employmanagement/src/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   display: flex;
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .app-content {
   flex: 1;
-  margin-left: 280px;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  max-width: 100%;
 }
 
 .main-content {
-  padding: 2rem;
-}
-
-.app-loading {
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  gap: 1rem;
-  color: #6b7280;
+  gap: 1.5rem;
 }
 
-.loading-spinner {
-  width: 24px;
-  height: 24px;
-  border: 3px solid #f3f4f6;
-  border-top-color: #2563eb;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.content-left {
+  flex: 1;
+  min-width: 0;
 }
 
+.content-right {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.app-loading,
 .app-error {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  gap: 1rem;
-  padding: 2rem;
-  text-align: center;
+  background-color: #f5f5f5;
 }
 
-.app-error button {
-  padding: 0.5rem 1rem;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.page-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 2rem;
-}
-
-.leave-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+@media (max-width: 1024px) {
+  .content-right {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .app-content {
-    margin-left: 0;
+    padding: 1rem;
   }
-}
-
-.app-container {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f9fafb;
-  display: flex;
-  position: relative;
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: 100vh;
-}
-
-.page-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.overlay {
-  position: relative;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 40;
-}
-
-/* Fix z-index stacking */
-.employee-view {
-  position: relative;
-  z-index: 1;
-}
-
-.filter-container {
-  position: relative;
-  z-index: 100;
-}
-
-@media (min-width: 1024px) {
-  .overlay {
-    display: none;
+  
+  .main-content {
+    gap: 1rem;
   }
 }

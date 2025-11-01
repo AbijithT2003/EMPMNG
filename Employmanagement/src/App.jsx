@@ -1,23 +1,21 @@
+// Employmanagement/src/App.jsx
 import React, { useState, useEffect } from "react";
-import Header from "./components/layout/Header";
-import Sidebar from "./components/layout/Sidebar";
+import TopNav from "./components/layout/TopNav";
 import EmployeeView from "./components/employees/EmployeeView";
 import DepartmentView from "./components/departments/DepartmentView";
-import LeaveRequestList from "./components/leave/LeaveRequestList";
+import LeaveRequestPage from "./components/leave/LeaveRequestPage";
+import LeaveRequestPanel from "./components/leave/LeaveRequestPanel";
 import apiService from "./services/api";
 import "./App.css";
 
 export default function App() {
-  // State management
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [activeView, setActiveView] = useState("employees");
+  const [activeView, setActiveView] = useState("dashboard");
   const [employees, setEmployees] = useState([]);
   const [departments, setDepartments] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch initial data
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -48,7 +46,6 @@ export default function App() {
     loadData();
   }, []);
 
-  // Employee CRUD operations
   const handleCreateEmployee = async (employeeData) => {
     try {
       const newEmployee = await apiService.createEmployee(employeeData);
@@ -81,7 +78,6 @@ export default function App() {
     }
   };
 
-  // Render loading or error states
   if (loading) {
     return (
       <div className="app-loading">
@@ -101,46 +97,53 @@ export default function App() {
     );
   }
 
+  const showDashboard = activeView === "dashboard";
+
   return (
     <div className="app">
-      <Sidebar
-        activeView={activeView}
-        setActiveView={setActiveView}
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
-
       <div className="app-content">
-        <Header
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          onOpenSidebar={() => setSidebarOpen(true)}
-        />
+        <TopNav activeView={activeView} setActiveView={setActiveView} />
 
         <main className="main-content">
-          {activeView === "employees" && (
-            <EmployeeView
-              employees={employees}
-              departments={departments}
-              searchQuery={searchQuery}
-              onCreateEmployee={handleCreateEmployee}
-              onUpdateEmployee={handleUpdateEmployee}
-              onDeleteEmployee={handleDeleteEmployee}
-            />
-          )}
+          <div className="content-left">
+            {showDashboard && (
+              <>
+                <h1
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    marginBottom: "2rem",
+                  }}
+                >
+                  WELCOME, ADMIN..........
+                </h1>
+                <EmployeeView
+                  employees={employees}
+                  departments={departments}
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  onCreateEmployee={handleCreateEmployee}
+                  onUpdateEmployee={handleUpdateEmployee}
+                  onDeleteEmployee={handleDeleteEmployee}
+                />
+              </>
+            )}
 
-          {activeView === "departments" && (
-            <DepartmentView
-              departments={departments}
-              employees={employees}
-              searchQuery={searchQuery}
-            />
-          )}
+            {activeView === "departments" && (
+              <DepartmentView
+                departments={departments}
+                employees={employees}
+                searchQuery={searchQuery}
+              />
+            )}
 
-          {activeView === "leave" && (
-            <div className="leave-container">
-              <h1 className="page-title">Leave Management</h1>
-              <LeaveRequestList />
+            {activeView === "leave" && (<LeaveRequestPage onBack={() => setActiveView("dashboard")} />
+            )}
+          </div>
+
+          {showDashboard && (
+            <div className="content-right">
+              <LeaveRequestPanel />
             </div>
           )}
         </main>
